@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Карта сайта ООО «Автодортрейд-БТК». Полная структура сайта. Sitemap of LLC «Avtodortreid-BTK». Full website structure.">
+    <meta name="theme-color" content="#002147">
+    <title data-ru="Карта сайта — ООО «Автодортрейд-БТК»" data-en="Sitemap — LLC «Avtodortreid-BTK»">Карта сайта — ООО «Автодортрейд-БТК»</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #002147;
+            --secondary: #003366;
+            --accent: #c9a227;
+            --accent-hover: #d4af37;
+            --light: #f5f5f5;
+            --dark: #001529;
+            --text: #1a1a1a;
+            --text-light: #4a4a4a;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        .header {
+            background: var(--primary);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-top {
+            background: var(--dark);
+            padding: 8px 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(201,162,39,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .header-contact span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+            font-size: 0.85rem;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-switch a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.85rem;
+            border: 1px solid transparent;
+            user-select: none;
+        }
+
+        .lang-switch a:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-1px);
+        }
+
+        .lang-switch a.active {
+            color: var(--primary);
+            background: var(--accent);
+            border-color: var(--accent);
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(201,162,39,0.3);
+        }
+
+        .header-main {
+            padding: 12px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--primary);
+            box-shadow: 0 4px 12px rgba(201,162,39,0.3);
+            flex-shrink: 0;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .nav {
+            background: var(--secondary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 16px 24px;
+            display: block;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 3px solid transparent;
+            position: relative;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover, .nav a.active {
+            background: rgba(255,255,255,0.08);
+            color: var(--accent-hover);
+        }
+
+        .nav a:hover::after, .nav a.active::after {
+            width: 70%;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 120px;
+            background: linear-gradient(135deg, rgba(0,33,71,0.95) 0%, rgba(0,51,102,0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(201,162,39,0.2)" stroke-width="2"/></svg>');
+            background-size: cover, 40px 40px;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 50%, rgba(201,162,39,0.1) 0%, transparent 50%);
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .page-header p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumbs {
+            background: var(--light);
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .breadcrumbs-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumbs a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+            border-radius: 2px;
+        }
+
+        /* Sitemap Grid */
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .sitemap-column {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent);
+        }
+
+        .sitemap-column h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sitemap-column h3 span {
+            font-size: 1.5rem;
+        }
+
+        .sitemap-list {
+            list-style: none;
+        }
+
+        .sitemap-list li {
+            margin-bottom: 12px;
+        }
+
+        .sitemap-list a {
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .sitemap-list a::before {
+            content: '›';
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .sitemap-list a:hover {
+            background: var(--light);
+            color: var(--primary);
+            padding-left: 18px;
+        }
+
+        .sitemap-list .sub-item a {
+            padding-left: 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .sitemap-list .sub-item a::before {
+            content: '—';
+            font-size: 0.8rem;
+        }
+
+        .sitemap-list .sub-item a:hover {
+            padding-left: 26px;
+        }
+
+        /* Quick Links Section */
+        .quick-links {
+            background: var(--light);
+            padding: 60px 0;
+        }
+
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .quick-link-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .quick-link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .quick-link-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+        }
+
+        .quick-link-card h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .quick-link-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .quick-link-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .quick-link-card a:hover {
+            color: var(--accent);
+        }
+
+        /* SEO Info Section */
+        .seo-info {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 60px;
+            border-radius: 16px;
+            color: white;
+            text-align: center;
+        }
+
+        .seo-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .seo-info p {
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .seo-meta {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .seo-meta-item {
+            text-align: center;
+        }
+
+        .seo-meta-item span:first-child {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .seo-meta-item span:last-child {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .footer-column h4 {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-bottom p {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 9999;
+            border-left: 4px solid var(--accent);
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .sitemap-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .quick-links-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-contact {
+                justify-content: center;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--secondary);
+            }
+
+            .nav.active {
+                display: block;
+            }
+
+            .nav ul {
+                flex-direction: column;
+            }
+
+            .nav a {
+                padding: 15px 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .page-header {
+                margin-top: 140px;
+                padding: 50px 0;
+            }
+
+            .sitemap-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .seo-info {
+                padding: 40px 25px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-column a {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span data-ru="+7 (495) 411-77-77" data-en="+7 (495) 411-77-77">+7 (495) 411-77-77</span>
+                        </span>
+                        <span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span data-ru="info@avtodortreid.ru" data-en="info@avtodortreid.ru">info@avtodortreid.ru</span>
+                        </span>
+                    </div>
+                    <div class="lang-switch">
+                        <a href="#" class="active" onclick="setLanguage('ru'); return false;">RU</a>
+                        <a href="#" onclick="setLanguage('en'); return false;">EN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <div class="logo-icon">АД</div>
+                    <div class="logo-text">
+                        <h1 data-ru="Автодортрейд-БТК" data-en="Avtodortreid-BTK">Автодортрейд-БТК</h1>
+                        <p data-ru="Производство нерудных материалов" data-en="Non-metallic materials production">Производство нерудных материалов</p>
+                    </div>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            </div>
+        </div>
+        <nav class="nav" id="mainNav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
+                    <li><a href="about.html" data-ru="О компании" data-en="About">О компании</a></li>
+                    <li><a href="history.html" data-ru="История" data-en="History">История</a></li>
+                    <li><a href="careers.html" data-ru="Карьера" data-en="Careers">Карьера</a></li>
+                    <li><a href="press.html" data-ru="Пресс-центр" data-en="Press Center">Пресс-центр</a></li>
+                    <li><a href="documents.html" data-ru="Документы" data-en="Documents">Документы</a></li>
+                    <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 data-ru="Карта сайта" data-en="Sitemap">Карта сайта</h1>
+                <p data-ru="Полная структура веб-сайта ООО «Автодортрейд-БТК»" data-en="Complete structure of LLC «Avtodortreid-BTK» website">Полная структура веб-сайта ООО «Автодортрейд-БТК»</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="breadcrumbs-content">
+                <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+                <span>/</span>
+                <span data-ru="Карта сайта" data-en="Sitemap">Карта сайта</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sitemap Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-ru="Структура сайта" data-en="Website Structure">Структура сайта</h2>
+                <p data-ru="Навигация по всем разделам и страницам" data-en="Navigation through all sections and pages">Навигация по всем разделам и страницам</p>
+            </div>
+            <div class="sitemap-grid">
+                <!-- Main Pages -->
+                <div class="sitemap-column">
+                    <h3><span>🏠</span> <span data-ru="Основные" data-en="Main">Основные</span></h3>
+                    <ul class="sitemap-list">
+                        <li><a href="index.html" data-ru="Главная страница" data-en="Homepage">Главная страница</a></li>
+                        <li><a href="about.html" data-ru="О компании" data-en="About Us">О компании</a></li>
+                        <li><a href="history.html" data-ru="История компании" data-en="Company History">История компании</a></li>
+                        <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+                        <li><a href="sitemap.html" data-ru="Карта сайта" data-en="Sitemap">Карта сайта</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Info -->
+                <div class="sitemap-column">
+                    <h3><span>🏢</span> <span data-ru="О компании" data-en="Company Info">О компании</span></h3>
+                    <ul class="sitemap-list">
+                        <li><a href="about.html" data-ru="Общая информация" data-en="General Information">Общая информация</a></li>
+                        <li><a href="history.html" data-ru="История и достижения" data-en="History & Achievements">История и достижения</a></li>
+                        <li><a href="documents.html" data-ru="Документы" data-en="Documents">Документы</a></li>
+                        <li class="sub-item"><a href="documents.html#certificates" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a></li>
+                        <li class="sub-item"><a href="documents.html#license" data-ru="Лицензии" data-en="Licenses">Лицензии</a></li>
+                        <li><a href="requisites.html" data-ru="Реквизиты" data-en="Requisites">Реквизиты</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products & Services -->
+                <div class="sitemap-column">
+                    <h3><span>🏗️</span> <span data-ru="Продукция" data-en="Products">Продукция</span></h3>
+                    <ul class="sitemap-list">
+                        <li><a href="products.html" data-ru="Вся продукция" data-en="All Products">Вся продукция</a></li>
+                        <li class="sub-item"><a href="products.html#gravel" data-ru="Щебень" data-en="Crushed Stone">Щебень</a></li>
+                        <li class="sub-item"><a href="products.html#sand" data-ru="Песок" data-en="Sand">Песок</a></li>
+                        <li class="sub-item"><a href="products.html#pgm" data-ru="ПГС" data-en="Sand-Gravel Mix">ПГС</a></li>
+                        <li><a href="services.html" data-ru="Услуги" data-en="Services">Услуги</a></li>
+                        <li><a href="delivery.html" data-ru="Доставка" data-en="Delivery">Доставка</a></li>
+                        <li><a href="price.html" data-ru="Прайс-лист" data-en="Price List">Прайс-лист</a></li>
+                    </ul>
+                </div>
+
+                <!-- Media & Careers -->
+                <div class="sitemap-column">
+                    <h3><span>📰</span> <span data-ru="Медиа и карьера" data-en="Media & Careers">Медиа и карьера</span></h3>
+                    <ul class="sitemap-list">
+                        <li><a href="press.html" data-ru="Пресс-центр" data-en="Press Center">Пресс-центр</a></li>
+                        <li class="sub-item"><a href="press.html#news" data-ru="Новости" data-en="News">Новости</a></li>
+                        <li class="sub-item"><a href="press.html#releases" data-ru="Пресс-релизы" data-en="Press Releases">Пресс-релизы</a></li>
+                        <li><a href="careers.html" data-ru="Карьера" data-en="Careers">Карьера</a></li>
+                        <li class="sub-item"><a href="careers.html#vacancies" data-ru="Вакансии" data-en="Vacancies">Вакансии</a></li>
+                        <li class="sub-item"><a href="careers.html#benefits" data-ru="Преимущества" data-en="Benefits">Преимущества</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-ru="Быстрые ссылки" data-en="Quick Links">Быстрые ссылки</h2>
+                <p data-ru="Часто посещаемые страницы" data-en="Most visited pages">Часто посещаемые страницы</p>
+            </div>
+            <div class="quick-links-grid">
+                <div class="quick-link-card">
+                    <div class="quick-link-icon">📋</div>
+                    <h4 data-ru="Реквизиты" data-en="Requisites">Реквизиты</h4>
+                    <p data-ru="Юридические данные компании" data-en="Company legal details">Юридические данные компании</p>
+                    <a href="requisites.html" data-ru="Перейти →" data-en="Go to →">Перейти →</a>
+                </div>
+                <div class="quick-link-card">
+                    <div class="quick-link-icon">📞</div>
+                    <h4 data-ru="Контакты" data-en="Contacts">Контакты</h4>
+                    <p data-ru="Телефоны и адреса офисов" data-en="Phones and office addresses">Телефоны и адреса офисов</p>
+                    <a href="contacts.html" data-ru="Перейти →" data-en="Go to →">Перейти →</a>
+                </div>
+                <div class="quick-link-card">
+                    <div class="quick-link-icon">💼</div>
+                    <h4 data-ru="Вакансии" data-en="Vacancies">Вакансии</h4>
+                    <p data-ru="Открытые позиции в компании" data-en="Open positions in the company">Открытые позиции в компании</p>
+                    <a href="careers.html" data-ru="Перейти →" data-en="Go to →">Перейти →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Info Section -->
+    <section class="section">
+        <div class="container">
+            <div class="seo-info">
+                <h3 data-ru="Информация о сайте" data-en="Website Information">Информация о сайте</h3>
+                <p data-ru="Официальный веб-сайт ООО «Автодортрейд-БТК» — ведущего производителя нерудных строительных материалов в России" data-en="Official website of LLC «Avtodortreid-BTK» — leading producer of non-metallic construction materials in Russia">Официальный веб-сайт ООО «Автодортрейд-БТК» — ведущего производителя нерудных строительных материалов в России</p>
+                <div class="seo-meta">
+                    <div class="seo-meta-item">
+                        <span>10+</span>
+                        <span data-ru="Страниц" data-en="Pages">Страниц</span>
+                    </div>
+                    <div class="seo-meta-item">
+                        <span>2</span>
+                        <span data-ru="Языка" data-en="Languages">Языка</span>
+                    </div>
+                    <div class="seo-meta-item">
+                        <span>22+</span>
+                        <span data-ru="Года опыта" data-en="Years of experience">Года опыта</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 data-ru="ООО «Автодортрейд-БТК»" data-en="LLC «Avtodortreid-BTK»">ООО «Автодортрейд-БТК»</h3>
+                    <p data-ru="Ведущий производитель нерудных строительных материалов с 2002 года. Качество, проверенное временем." data-en="Leading producer of non-metallic construction materials since 2002. Quality tested by time.">Ведущий производитель нерудных строительных материалов с 2002 года. Качество, проверенное временем.</p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-ru="Компания" data-en="Company">Компания</h4>
+                    <ul>
+                        <li><a href="about.html" data-ru="О компании" data-en="About Us">О компании</a></li>
+                        <li><a href="history.html" data-ru="История" data-en="History">История</a></li>
+                        <li><a href="careers.html" data-ru="Карьера" data-en="Careers">Карьера</a></li>
+                        <li><a href="press.html" data-ru="Пресс-центр" data-en="Press Center">Пресс-центр</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 data-ru="Информация" data-en="Information">Информация</h4>
+                    <ul>
+                        <li><a href="documents.html" data-ru="Документы" data-en="Documents">Документы</a></li>
+                        <li><a href="requisites.html" data-ru="Реквизиты" data-en="Requisites">Реквизиты</a></li>
+                        <li><a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a></li>
+                        <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 data-ru="Контакты" data-en="Contact">Контакты</h4>
+                    <ul>
+                        <li><span data-ru="Тел: +7 (495) 411-77-77" data-en="Tel: +7 (495) 411-77-77">Тел: +7 (495) 411-77-77</span></li>
+                        <li><span data-ru="Email: info@avtodortreid.ru" data-en="Email: info@avtodortreid.ru">Email: info@avtodortreid.ru</span></li>
+                        <li><span data-ru="Москва, 5-я Ямского Поля, 23/25" data-en="Moscow, 5-Ya Yamskogo Polya, 23/25">Москва, 5-я Ямского Поля, 23/25</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-ru="© 2024 ООО «Автодортрейд-БТК». Все права защищены." data-en="© 2024 LLC «Avtodortreid-BTK». All rights reserved.">© 2024 ООО «Автодортрейд-БТК». Все права защищены.</p>
+                <p data-ru="ИНН: 7703324065 | ОГРН: 1027739129186" data-en="INN: 7703324065 | OGRN: 1027739129186">ИНН: 7703324065 | ОГРН: 1027739129186</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span id="toastMessage">Copied!</span>
+    </div>
+
+    <script>
+        // Language Switcher
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            
+            document.querySelectorAll('[data-ru][data-en]').forEach(el => {
+                el.textContent = el.getAttribute('data-' + lang);
+            });
+            
+            document.querySelectorAll('.lang-switch a').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            localStorage.setItem('language', lang);
+        }
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('mainNav').classList.toggle('active');
+        }
+
+        // Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // Load saved language preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('language') || 'ru';
+            if (savedLang !== 'ru') {
+                document.querySelectorAll('[data-ru][data-en]').forEach(el => {
+                    el.textContent = el.getAttribute('data-' + savedLang);
+                });
+                document.querySelectorAll('.lang-switch a').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.textContent.toLowerCase() === savedLang) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

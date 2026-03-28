@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Направления деятельности ООО Автодортрейд-БТК - операции с нефтегазовыми активами, поставки и логистика, управление месторождениями.">
+    <meta name="theme-color" content="#002147">
+    <title>Направления деятельности — ООО «Автодортрейд-БТК»</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #002147;
+            --secondary: #003366;
+            --accent: #c9a227;
+            --accent-hover: #d4af37;
+            --light: #f5f5f5;
+            --dark: #001529;
+            --text: #1a1a1a;
+            --text-light: #4a4a4a;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        .header {
+            background: var(--primary);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-top {
+            background: var(--dark);
+            padding: 8px 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(201,162,39,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .header-contact span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+            font-size: 0.85rem;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-switch a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.85rem;
+            border: 1px solid transparent;
+            user-select: none;
+        }
+
+        .lang-switch a:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-1px);
+        }
+
+        .lang-switch a.active {
+            color: var(--primary);
+            background: var(--accent);
+            border-color: var(--accent);
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(201,162,39,0.3);
+        }
+
+        .header-main {
+            padding: 12px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--primary);
+            box-shadow: 0 4px 12px rgba(201,162,39,0.3);
+            flex-shrink: 0;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .menu-toggle:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--secondary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 16px 24px;
+            display: block;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 3px solid transparent;
+            position: relative;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover, .nav a.active {
+            background: rgba(255,255,255,0.08);
+            color: var(--accent-hover);
+        }
+
+        .nav a:hover::after, .nav a.active::after {
+            width: 70%;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 120px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(201,162,39,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 40px 40px;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .page-header p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            background: var(--light);
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .breadcrumbs-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumbs a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumbs span {
+            color: var(--accent);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            max-width: 600px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+
+        /* Services Grid - Enhanced from original */
+        .services {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            border-top: 4px solid var(--accent);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover * {
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--light) 0%, white 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.5rem;
+            border: 3px solid var(--accent);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:hover .service-icon {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover .service-features li {
+            color: rgba(255,255,255,0.9);
+            border-bottom-color: rgba(255,255,255,0.1);
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .service-card:hover .service-features li::before {
+            color: var(--accent-hover);
+        }
+
+        /* Detailed Info Section */
+        .detailed-info {
+            background: var(--light);
+        }
+
+        .info-block {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--accent);
+        }
+
+        .info-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-block h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-block h3 span {
+            font-size: 2rem;
+        }
+
+        .info-block > p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .info-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .detail-item:hover {
+            background: rgba(201,162,39,0.05);
+            transform: translateX(5px);
+        }
+
+        .detail-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .detail-text h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .detail-text p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Process Steps */
+        .process-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            position: relative;
+        }
+
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,162,39,0.1)" stroke-width="1"/></svg>');
+            background-size: 60px 60px;
+        }
+
+        .process-section .section-title h2 {
+            color: white;
+        }
+
+        .process-section .section-title p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-step {
+            flex: 1;
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(201,162,39,0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .process-step h3 {
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .process-step p {
+            opacity: 0.9;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* Standards Section */
+        .standards {
+            background: white;
+        }
+
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .standard-card {
+            background: var(--light);
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .standard-card:hover {
+            background: white;
+            border-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .standard-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .standard-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .standard-card p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+            border-top: 4px solid var(--accent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            color: var(--accent);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-brand p {
+            opacity: 0.85;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201,162,39,0.3);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+            padding-left: 8px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(201,162,39,0.2);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            border: 2px solid rgba(201,162,39,0.4);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(201,162,39,0.3);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(201,162,39,0.3);
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201,162,39,0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border-color: rgba(255,255,255,0.4);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+
+        /* ================= MOBILE RESPONSIVE ================= */
+        
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .info-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                flex-wrap: wrap;
+            }
+            
+            .process-step {
+                flex: 1 1 45%;
+            }
+            
+            .standards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+
+            .header-top-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .header-contact {
+                gap: 15px;
+                font-size: 0.8rem;
+            }
+
+            .header-main {
+                padding: 10px 0;
+            }
+
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+
+            .logo-text h1 {
+                font-size: 1.1rem;
+            }
+
+            .logo-text p {
+                font-size: 0.65rem;
+                letter-spacing: 1px;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--primary);
+                z-index: 1001;
+                transition: right 0.3s ease;
+                padding-top: 80px;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.3);
+            }
+
+            .nav.active {
+                right: 0;
+            }
+
+            .nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .nav a {
+                padding: 18px 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                font-size: 1rem;
+            }
+
+            .nav a::after {
+                display: none;
+            }
+
+            .nav a:hover {
+                background: rgba(201,162,39,0.1);
+                padding-left: 30px;
+            }
+
+            .page-header {
+                margin-top: 110px;
+                padding: 60px 0;
+            }
+
+            .page-header h1 {
+                font-size: 1.6rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .service-card {
+                padding: 35px 25px;
+            }
+
+            .info-block {
+                padding: 30px 25px;
+            }
+
+            .detail-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .process-step {
+                flex: 1 1 100%;
+            }
+
+            .standards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                text-align: center;
+            }
+
+            .footer-brand h3 {
+                font-size: 1.4rem;
+            }
+
+            .footer-section h4 {
+                padding-bottom: 8px;
+            }
+
+            .footer-section a:hover {
+                padding-left: 0;
+                color: var(--accent);
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .service-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+
+            .social-links a {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        @media (hover: none) {
+            .service-card:hover {
+                transform: none;
+            }
+            
+            .service-card:hover::before {
+                opacity: 0;
+            }
+            
+            .service-card:hover * {
+                color: inherit;
+            }
+            
+            .service-card:active {
+                transform: scale(0.98);
+            }
+
+            .btn:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <span data-ru="📍 Москва, Россия" data-en="📍 Moscow, Russia">📍 Москва, Россия</span>
+                        <span>📞 +7 (495) XXX-XX-XX</span>
+                        <span>✉️ info@avtodortreid-btk.ru</span>
+                    </div>
+                    <div class="lang-switch">
+                        <a onclick="switchLang('ru')" id="btn-ru" class="active">RU</a>
+                        <a onclick="switchLang('en')" id="btn-en">EN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="header-main" style="position: relative;">
+                <div class="logo">
+                    <div class="logo-icon">АД</div>
+                    <div class="logo-text">
+                        <h1 data-ru="АВТОДОРТРЕЙД-БТК" data-en="AVTODORTREID-BTK">АВТОДОРТРЕЙД-БТК</h1>
+                        <p data-ru="Оператор нефтегазовых активов" data-en="Oil & Gas Asset Operator">Оператор нефтегазовых активов</p>
+                    </div>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            </div>
+        </div>
+
+        <nav class="nav" id="nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html" onclick="closeMenu()" data-ru="Главная" data-en="Home">Главная</a></li>
+                    <li><a href="about.html" onclick="closeMenu()" data-ru="О компании" data-en="About">О компании</a></li>
+                    <li><a href="operations.html" onclick="closeMenu()" class="active" data-ru="Деятельность" data-en="Operations">Деятельность</a></li>
+                    <li><a href="index.html#contact" onclick="closeMenu()" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 data-ru="Направления деятельности" data-en="Business Operations">Направления деятельности</h1>
+                <p data-ru="Комплексные решения в нефтегазовой отрасли" data-en="Integrated solutions in the oil and gas industry">Комплексные решения в нефтегазовой отрасли</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="breadcrumbs-content">
+                <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+                <span>/</span>
+                <span data-ru="Деятельность" data-en="Operations">Деятельность</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="section services">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-ru="Основные направления" data-en="Main Operations">Основные направления</h2>
+                <p data-ru="Полный спектр услуг в нефтегазовой отрасли" data-en="Full range of services in the oil and gas industry">Полный спектр услуг в нефтегазовой отрасли</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⛽</div>
+                    <h3 data-ru="Операции с месторождениями" data-en="Field Operations">Операции с месторождениями</h3>
+                    <p data-ru="Управление и эксплуатация объектов нефтегазовой отрасли, обеспечение бесперебойной добычи и переработки углеводородов." data-en="Management and operation of oil and gas facilities, ensuring uninterrupted production and processing of hydrocarbons.">Управление и эксплуатация объектов нефтегазовой отрасли, обеспечение бесперебойной добычи и переработки углеводородов.</p>
+                    <ul class="service-features">
+                        <li data-ru="Управление нефтегазовыми активами" data-en="Oil & gas asset management">Управление нефтегазовыми активами</li>
+                        <li data-ru="Эксплуатация месторождений" data-en="Field operation">Эксплуатация месторождений</li>
+                        <li data-ru="Техническое обслуживание" data-en="Technical maintenance">Техническое обслуживание</li>
+                        <li data-ru="Контроль добычи" data-en="Production control">Контроль добычи</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🚛</div>
+                    <h3 data-ru="Поставки и логистика" data-en="Supply & Logistics">Поставки и логистика</h3>
+                    <p data-ru="Организация поставочной цепочки нефти и газа, транспортировка и хранение энергоресурсов." data-en="Organization of oil and gas supply chain, transportation and storage of energy resources.">Организация поставочной цепочки нефти и газа, транспортировка и хранение энергоресурсов.</p>
+                    <ul class="service-features">
+                        <li data-ru="Логистика нефти и газа" data-en="Oil & gas logistics">Логистика нефти и газа</li>
+                        <li data-ru="Транспортировка" data-en="Transportation">Транспортировка</li>
+                        <li data-ru="Хранение ресурсов" data-en="Resource storage">Хранение ресурсов</li>
+                        <li data-ru="Цепочка поставок" data-en="Supply chain">Цепочка поставок</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 data-ru="Энергетический сектор" data-en="Energy Sector">Энергетический сектор</h3>
+                    <p data-ru="Работа в энергетическом секторе экономики с фокусом на эффективность и надёжность поставок." data-en="Operating in the energy sector with focus on efficiency and reliability of supply.">Работа в энергетическом секторе экономики с фокусом на эффективность и надёжность поставок.</p>
+                    <ul class="service-features">
+                        <li data-ru="Энергетические ресурсы" data-en="Energy resources">Энергетические ресурсы</li>
+                        <li data-ru="Эффективность поставок" data-en="Supply efficiency">Эффективность поставок</li>
+                        <li data-ru="Устойчивое развитие" data-en="Sustainable development">Устойчивое развитие</li>
+                        <li data-ru="Инновационные решения" data-en="Innovative solutions">Инновационные решения</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Info Section -->
+    <section class="section detailed-info">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-ru="Подробная информация" data-en="Detailed Information">Подробная информация</h2>
+                <p data-ru="Специфика наших операционных возможностей" data-en="Specifics of our operational capabilities">Специфика наших операционных возможностей</p>
+            </div>
+
+            <div class="info-block">
+                <h3><span>⛽</span> <span data-ru="Операции с нефтегазовыми активами" data-en="Oil & Gas Asset Operations">Операции с нефтегазовыми активами</span></h3>
+                <p data-ru="ООО «Автодортрейд-БТК» осуществляет комплексное управление нефтегазовыми активами, включая эксплуатацию месторождений, техническое обслуживание оборудования и контроль процессов добычи. Наш многолетний опыт позволяет обеспечивать стабильную работу объектов в различных условиях с максимальной эффективностью." data-en="LLC «Avtodortreid-BTK» provides comprehensive management of oil and gas assets, including field operation, equipment maintenance and production process control. Our many years of experience allow us to ensure stable operation of facilities in various conditions with maximum efficiency.">ООО «Автодортрейд-БТК» осуществляет комплексное управление нефтегазовыми активами, включая эксплуатацию месторождений, техническое обслуживание оборудования и контроль процессов добычи. Наш многолетний опыт позволяет обеспечивать стабильную работу объектов в различных условиях с максимальной эффективностью.</p>
+                
+                <div class="info-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">🏭</div>
+                        <div class="detail-text">
+                            <h4 data-ru="Управление активами" data-en="Asset Management">Управление активами</h4>
+                            <p data-ru="Полный цикл управления нефтегазовыми объектами" data-en="Full cycle oil & gas asset management">Полный цикл управления нефтегазовыми объектами</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">🔧</div>
+                        <div class="detail-text">
+                            <h4 data-ru="Техническое обслуживание" data-en="Maintenance">Техническое обслуживание</h4>
+                            <p data-ru="Плановое и аварийное обслуживание оборудования" data-en="Scheduled and emergency equipment maintenance">Плановое и аварийное обслуживание оборудования</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">📊</div>
+                        <div class="detail-text">
+                            <h4 data-ru="Мониторинг" data-en="Monitoring">Мониторинг</h4>
+                            <p data-ru="Контроль параметров добычи в реальном времени" data-en="Real-time production parameter monitoring">Контроль параметров добычи в реальном времени</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">⚙️</div>
+                        <div class="detail-text">
+                            <h4 data-ru="Оптимизация" data-en="Optimization">Оптимизация</h4>
+                            <p data-ru="Повышение эффективности операционных процессов" data-en="Improving operational process efficiency">Повышение эффективности операционных процессов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <h3><span>🚛</span> <span data-ru="Логистика и поставки" data-en="Logistics & Supply">Логистика и поставки</span></h3>
+                <p data-ru="Наша компания организует полный цикл логистических операций в нефтегазовой отрасли — от транспортировки сырья до конечной поставки потребителям. Мы обеспечиваем надёжность и безопасность на всех этапах поставочной цепочки, гарантируя своевременную доставку энергоресурсов." data-en="Our company organizes the full cycle of logistics operations in the oil and gas industry — from raw material transportation to final delivery to consumers. We ensure reliability and safety at all stages of the supply chain, guaranteeing timely delivery of energy resources.">Наша компания организует полный цикл логистических операций в нефтегазовой отрасли — от транспортировки сырья до конечной поставки потребителям. Мы обеспечиваем надёжность и безопасность на всех этапах поставочной цепочки, гарантируя своевременную доставку энергоресурсов.</p>
+                
+                <div class="info-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">🚚</div>
+                        <div class="detail-text">
+                            <h4 data-ru="Транспортировка" data-en="Transportation">Транспортировка</h4>
+                            <p data-ru="Мультимодальные перевозки нефти и газа" data-en="Multimodal oil and gas transportation">Мультимодальные перевозки нефти и газа</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">🏗️</div>
+                        <div class="detail-text">
+                            <h4 data-ru="Хранение" data-en="Storage">Хранение</h4>
+                            <p data-ru="Безопасное хранение в специализированных резервуарах" data-en="Secure storage in specialized tanks">Безопасное хранение в специализированных резервуарах</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">📋</div>
+                        <div class="detail-text">
+                            <h4 data-ru="Документооборот" data-en="Documentation">Документооборот</h4>
+                            <p data-ru="Полное сопровождение грузов документально" data-en="Complete cargo documentation support">Полное сопровождение грузов документально</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">🛡️</div>
+                        <div class="detail-text">
+                            <h4 data-ru="Безопасность" data-en="Safety">Безопасность</h4>
+                            <p data-ru="Строгое соблюдение норм безопасности" data-en="Strict compliance with safety standards">Строгое соблюдение норм безопасности</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <h3><span>⚡</span> <span data-ru="Энергетический сектор" data-en="Energy Sector">Энергетический сектор</span></h3>
+                <p data-ru="Работа в энергетическом секторе требует высокого уровня ответственности и профессионализма. Мы обеспечиваем стабильные поставки энергоресурсов, поддерживая баланс спроса и предложения на рынке и способствуя устойчивому развитию отрасли." data-en="Working in the energy sector requires a high level of responsibility and professionalism. We ensure stable energy supply, maintaining the balance of supply and demand in the market and promoting sustainable industry development.">Работа в энергетическом секторе требует высокого уровня ответственности и профессионализма. Мы обеспечиваем стабильные поставки энергоресурсов, поддерживая баланс спроса и предложения на рынке и способствуя устойчивому развитию отрасли.</p>
+                
+                <div class="info-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">🎯</div>
+                        <div class="detail-text">
+                            <h4 data-ru="Точность" data-en="Precision">Точность</h4>
+                            <p data-ru="Точное планирование и выполнение задач" data-en="Precise planning and task execution">Точное планирование и выполнение задач</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">🌱</div>
+                        <div class="detail-text">
+                            <h4 data-ru="Экологичность" data-en="Eco-friendliness">Экологичность</h4>
+                            <p data-ru="Соблюдение экологических стандартов" data-en="Compliance with environmental standards">Соблюдение экологических стандартов</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">🔄</div>
+                        <div class="detail-text">
+                            <h4 data-ru="Адаптивность" data-en="Adaptability">Адаптивность</h4>
+                            <p data-ru="Быстрая адаптация к изменениям рынка" data-en="Quick adaptation to market changes">Быстрая адаптация к изменениям рынка</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">💡</div>
+                        <div class="detail-text">
+                            <h4 data-ru="Инновации" data-en="Innovation">Инновации</h4>
+                            <p data-ru="Внедрение передовых технологий" data-en="Implementation of advanced technologies">Внедрение передовых технологий</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-ru="Процесс работы" data-en="Work Process">Процесс работы</h2>
+                <p data-ru="Как мы организуем нашу операционную деятельность" data-en="How we organize our operational activities">Как мы организуем нашу операционную деятельность</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3 data-ru="Анализ" data-en="Analysis">Анализ</h3>
+                    <p data-ru="Детальный анализ потребностей клиента и оценка нефтегазовых активов" data-en="Detailed analysis of client needs and assessment of oil & gas assets">Детальный анализ потребностей клиента и оценка нефтегазовых активов</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3 data-ru="Планирование" data-en="Planning">Планирование</h3>
+                    <p data-ru="Разработка комплексного плана операций с учётом всех факторов" data-en="Development of a comprehensive operations plan considering all factors">Разработка комплексного плана операций с учётом всех факторов</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3 data-ru="Реализация" data-en="Implementation">Реализация</h3>
+                    <p data-ru="Профессиональное выполнение операций с контролем качества" data-en="Professional execution of operations with quality control">Профессиональное выполнение операций с контролем качества</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3 data-ru="Оптимизация" data-en="Optimization">Оптимизация</h3>
+                    <p data-ru="Непрерывное совершенствование процессов и повышение эффективности" data-en="Continuous process improvement and efficiency enhancement">Непрерывное совершенствование процессов и повышение эффективности</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standards Section -->
+    <section class="section standards">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-ru="Стандарты и сертификация" data-en="Standards & Certification">Стандарты и сертификация</h2>
+                <p data-ru="Мы работаем в соответствии с международными стандартами качества" data-en="We operate in accordance with international quality standards">Мы работаем в соответствии с международными стандартами качества</p>
+            </div>
+            
+            <div class="standards-grid">
+                <div class="standard-card">
+                    <div class="standard-icon">🏆</div>
+                    <h4 data-ru="ISO 9001" data-en="ISO 9001">ISO 9001</h4>
+                    <p data-ru="Система менеджмента качества" data-en="Quality Management System">Система менеджмента качества</p>
+                </div>
+                <div class="standard-card">
+                    <div class="standard-icon">🛡️</div>
+                    <h4 data-ru="ISO 45001" data-en="ISO 45001">ISO 45001</h4>
+                    <p data-ru="Охрана труда и безопасность" data-en="Occupational Health & Safety">Охрана труда и безопасность</p>
+                </div>
+                <div class="standard-card">
+                    <div class="standard-icon">🌱</div>
+                    <h4 data-ru="ISO 14001" data-en="ISO 14001">ISO 14001</h4>
+                    <p data-ru="Экологический менеджмент" data-en="Environmental Management">Экологический менеджмент</p>
+                </div>
+                <div class="standard-card">
+                    <div class="standard-icon">⚖️</div>
+                    <h4 data-ru="ГОСТ Р" data-en="GOST R">ГОСТ Р</h4>
+                    <p data-ru="Соответствие российским стандартам" data-en="Compliance with Russian standards">Соответствие российским стандартам</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-ru="Готовы к сотрудничеству?" data-en="Ready to Cooperate?">Готовы к сотрудничеству?</h2>
+                <p data-ru="Свяжитесь с нами для обсуждения ваших проектов в нефтегазовой отрасли" data-en="Contact us to discuss your projects in the oil and gas industry">Свяжитесь с нами для обсуждения ваших проектов в нефтегазовой отрасли</p>
+                <div class="cta-buttons">
+                    <a href="index.html#contact" class="btn" data-ru="Связаться с нами" data-en="Contact Us">Связаться с нами</a>
+                    <a href="about.html" class="btn btn-outline" data-ru="Узнать больше" data-en="Learn More">Узнать больше</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 data-ru="АВТОДОРТРЕЙД-БТК" data-en="AVTODORTREID-BTK">АВТОДОРТРЕЙД-БТК</h3>
+                    <p data-ru="ООО «Автодортрейд-БТК» — российская компания, осуществляющая операционную деятельность в сфере нефтегазовых месторождений с 2002 года." data-en="LLC «Avtodortreid-BTK» is a Russian company operating in the oil and gas field sector since 2002.">ООО «Автодортрейд-БТК» — российская компания, осуществляющая операционную деятельность в сфере нефтегазовых месторождений с 2002 года.</p>
+                    <div class="social-links">
+                        <a href="#">in</a>
+                        <a href="#">f</a>
+                        <a href="#">@</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Компания" data-en="Company">Компания</h4>
+                    <ul>
+                        <li><a href="about.html" data-ru="О нас" data-en="About Us">О нас</a></li>
+                        <li><a href="index.html#info" data-ru="Реквизиты" data-en="Details">Реквизиты</a></li>
+                        <li><a href="about.html" data-ru="История" data-en="History">История</a></li>
+                        <li><a href="#" data-ru="Карьера" data-en="Careers">Карьера</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Деятельность" data-en="Operations">Деятельность</h4>
+                    <ul>
+                        <li><a href="operations.html" data-ru="Направления" data-en="Operations">Направления</a></li>
+                        <li><a href="#" data-ru="Проекты" data-en="Projects">Проекты</a></li>
+                        <li><a href="#" data-ru="Партнёры" data-en="Partners">Партнёры</a></li>
+                        <li><a href="#" data-ru="Закупки" data-en="Procurement">Закупки</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Информация" data-en="Information">Информация</h4>
+                    <ul>
+                        <li><a href="index.html#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+                        <li><a href="#" data-ru="Пресс-центр" data-en="Press Center">Пресс-центр</a></li>
+                        <li><a href="#" data-ru="Документы" data-en="Documents">Документы</a></li>
+                        <li><a href="#" data-ru="Карта сайта" data-en="Sitemap">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2002-2026 <span data-ru="ООО «Автодортрейд-БТК». Все права защищены." data-en="LLC «Avtodortreid-BTK». All rights reserved.">ООО «Автодортрейд-БТК». Все права защищены.</span></p>
+                <p data-ru="Оператор нефтегазовых активов" data-en="Oil & Gas Asset Operator">Оператор нефтегазовых активов</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const nav = document.getElementById('nav');
+            const toggle = document.querySelector('.menu-toggle');
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Language switching functionality
+        function switchLang(lang) {
+            // Update button states
+            document.getElementById('btn-ru').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Update all elements with data attributes
+            const elements = document.querySelectorAll('[data-ru][data-en]');
+            elements.forEach(el => {
+                if (lang === 'en') {
+                    el.innerHTML = el.getAttribute('data-en');
+                } else {
+                    el.innerHTML = el.getAttribute('data-ru');
+                }
+            });
+            
+            // Update page language attribute
+            document.documentElement.lang = lang;
+            
+            // Update meta description for SEO
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (lang === 'en') {
+                metaDesc.content = "Business Operations of LLC Avtodortreid-BTK - oil & gas field operations, supply & logistics, energy sector services.";
+            } else {
+                metaDesc.content = "Направления деятельности ООО Автодортрейд-БТК - операции с нефтегазовыми активами, поставки и логистика, энергетический сектор.";
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 120;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+
+</body>
+</html>

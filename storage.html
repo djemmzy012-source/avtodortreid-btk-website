@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Хранение нефти - нефтехранилища, резервуарные парки, терминалы. Системы безопасности и контроля уровня. Oil Storage Tank Farms.">
+    <meta name="theme-color" content="#002147">
+    <title data-ru="Хранение нефти — ООО «Автодортрейд-БТК»" data-en="Oil Storage — LLC «Avtodortreid-BTK»">Хранение нефти — ООО «Автодортрейд-БТК»</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #002147;
+            --secondary: #003366;
+            --accent: #c9a227;
+            --accent-hover: #d4af37;
+            --light: #f5f5f5;
+            --dark: #001529;
+            --text: #1a1a1a;
+            --text-light: #4a4a4a;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        .header {
+            background: var(--primary);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-top {
+            background: var(--dark);
+            padding: 8px 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(201,162,39,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .header-contact span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+            font-size: 0.85rem;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-switch a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.85rem;
+            border: 1px solid transparent;
+            user-select: none;
+        }
+
+        .lang-switch a:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-1px);
+        }
+
+        .lang-switch a.active {
+            color: var(--primary);
+            background: var(--accent);
+            border-color: var(--accent);
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(201,162,39,0.3);
+        }
+
+        .header-main {
+            padding: 12px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--primary);
+            box-shadow: 0 4px 12px rgba(201,162,39,0.3);
+            flex-shrink: 0;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .nav {
+            background: var(--secondary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 16px 24px;
+            display: block;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 3px solid transparent;
+            position: relative;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover, .nav a.active {
+            background: rgba(255,255,255,0.08);
+            color: var(--accent-hover);
+        }
+
+        .nav a:hover::after, .nav a.active::after {
+            width: 70%;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 120px;
+            background: linear-gradient(135deg, rgba(0,33,71,0.9) 0%, rgba(0,51,102,0.92) 50%, rgba(0,21,41,0.95) 100%),
+                        url('https://kimi-web-img.moonshot.cn/img/www.palagroup.com/330529017a10ec096bd1a9ad3d5ef46da7ecae16.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(201,162,39,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 40px 40px;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .page-header p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .breadcrumbs {
+            background: var(--light);
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .breadcrumbs-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumbs a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent);
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            max-width: 700px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+
+        /* Tank Types */
+        .tanks-section {
+            background: var(--light);
+        }
+
+        .tanks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .tank-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+        }
+
+        .tank-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tank-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+        }
+
+        .tank-content {
+            padding: 30px;
+        }
+
+        .tank-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .tank-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .tank-specs {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .tank-specs h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tank-specs ul {
+            list-style: none;
+        }
+
+        .tank-specs li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .tank-specs li:last-child {
+            border-bottom: none;
+        }
+
+        .tank-specs li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Safety Section */
+        .safety-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            position: relative;
+        }
+
+        .safety-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,162,39,0.1)" stroke-width="1"/></svg>');
+            background-size: 60px 60px;
+        }
+
+        .safety-section .section-title h2 {
+            color: white;
+        }
+
+        .safety-section .section-title p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .safety-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(201,162,39,0.2);
+            border-radius: 12px;
+            padding: 35px;
+            transition: all 0.3s ease;
+        }
+
+        .safety-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent);
+        }
+
+        .safety-card h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .safety-card h3 span {
+            font-size: 2rem;
+        }
+
+        .safety-card ul {
+            list-style: none;
+        }
+
+        .safety-card li {
+            padding: 12px 0;
+            padding-left: 25px;
+            position: relative;
+            opacity: 0.95;
+            line-height: 1.7;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .safety-card li:last-child {
+            border-bottom: none;
+        }
+
+        .safety-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Stats */
+        .stats-section {
+            background: white;
+        }
+
+        .stats-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: var(--light);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .stat-card:hover {
+            background: white;
+            border-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+            border-top: 4px solid var(--accent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            color: var(--accent);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .footer-brand p {
+            opacity: 0.85;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201,162,39,0.3);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+            padding-left: 8px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(201,162,39,0.2);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            border: 2px solid rgba(201,162,39,0.4);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .tanks-grid {
+                grid-template-columns: 1fr;
+            }
+            .safety-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--primary);
+                z-index: 1001;
+                transition: right 0.3s ease;
+                padding-top: 80px;
+            }
+            .nav.active {
+                right: 0;
+            }
+            .nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .page-header {
+                margin-top: 110px;
+                padding: 60px 0;
+            }
+            .section {
+                padding: 60px 0;
+            }
+            .stats-grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <span data-ru="📍 Москва, Россия" data-en="📍 Moscow, Russia">📍 Москва, Россия</span>
+                        <span>📞 +7 (495) XXX-XX-XX</span>
+                        <span>✉️ info@avtodortreid-btk.ru</span>
+                    </div>
+                    <div class="lang-switch">
+                        <a onclick="switchLang('ru')" id="btn-ru" class="active">RU</a>
+                        <a onclick="switchLang('en')" id="btn-en">EN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="header-main" style="position: relative;">
+                <div class="logo">
+                    <div class="logo-icon">АД</div>
+                    <div class="logo-text">
+                        <h1 data-ru="АВТОДОРТРЕЙД-БТК" data-en="AVTODORTREID-BTK">АВТОДОРТРЕЙД-БТК</h1>
+                        <p data-ru="Оператор нефтегазовых активов" data-en="Oil & Gas Asset Operator">Оператор нефтегазовых активов</p>
+                    </div>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            </div>
+        </div>
+
+        <nav class="nav" id="nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
+                    <li><a href="index.html#about" data-ru="О компании" data-en="About">О компании</a></li>
+                    <li><a href="index.html#services" data-ru="Деятельность" data-en="Operations">Деятельность</a></li>
+                    <li><a href="index.html#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 data-ru="Хранение нефти" data-en="Oil Storage">Хранение нефти</h1>
+                <p data-ru="Современные нефтехранилища и резервуарные парки с системами контроля уровня и обеспечения безопасности" data-en="Modern oil storage facilities and tank farms with level monitoring and safety systems">Современные нефтехранилища и резервуарные парки с системами контроля уровня и обеспечения безопасности</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="breadcrumbs-content">
+                <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+                <span>/</span>
+                <a href="index.html#services" data-ru="Деятельность" data-en="Operations">Деятельность</a>
+                <span>/</span>
+                <span data-ru="Хранение" data-en="Storage">Хранение</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tank Types -->
+    <section class="section tanks-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-ru="Типы резервуаров" data-en="Tank Types">Типы резервуаров</h2>
+                <p data-ru="Различные типы хранилищ для разных видов нефтепродуктов" data-en="Various storage types for different petroleum products">Различные типы хранилищ для разных видов нефтепродуктов</p>
+            </div>
+            
+            <div class="tanks-grid">
+                <div class="tank-card">
+                    <div class="tank-image">🛢️</div>
+                    <div class="tank-content">
+                        <h3 data-ru="Вертикальные стальные резервуары (РВС)" data-en="Vertical Steel Tanks (VST)">Вертикальные стальные резервуары (РВС)</h3>
+                        <p data-ru="Наиболее распространённый тип хранилищ для нефти и нефтепродуктов. Цилиндрические резервуары с плоским дном и конической или сферической крышей." data-en="The most common type of storage for oil and petroleum products. Cylindrical tanks with flat bottom and conical or spherical roof.">Наиболее распространённый тип хранилищ для нефти и нефтепродуктов. Цилиндрические резервуары с плоским дном и конической или сферической крышей.</p>
+                        <div class="tank-specs">
+                            <h4 data-ru="Характеристики" data-en="Specifications">Характеристики</h4>
+                            <ul>
+                                <li data-ru="Объём: 100 - 50 000 м³" data-en="Volume: 100 - 50,000 m³">Объём: 100 - 50 000 м³</li>
+                                <li data-ru="Высота: до 20 м" data-en="Height: up to 20 m">Высота: до 20 м</li>
+                                <li data-ru="Диаметр: до 60 м" data-en="Diameter: up to 60 m">Диаметр: до 60 м</li>
+                                <li data-ru="Материал: сталь 09Г2С" data-en="Material: Steel 09G2S">Материал: сталь 09Г2С</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tank-card">
+                    <div class="tank-image">🏭</div>
+                    <div class="tank-content">
+                        <h3 data-ru="Горизонтальные резервуары (РГС)" data-en="Horizontal Tanks (HT)">Горизонтальные резервуары (РГС)</h3>
+                        <p data-ru="Используются для хранения светлых нефтепродуктов, химических веществ и сжиженных газов. Размещаются на поверхности или заглубляются в грунт." data-en="Used for storing light petroleum products, chemicals and liquefied gases. Placed on surface or buried underground.">Используются для хранения светлых нефтепродуктов, химических веществ и сжиженных газов. Размещаются на поверхности или заглубляются в грунт.</p>
+                        <div class="tank-specs">
+                            <h4 data-ru="Характеристики" data-en="Specifications">Характеристики</h4>
+                            <ul>
+                                <li data-ru="Объём: 3 - 100 м³" data-en="Volume: 3 - 100 m³">Объём: 3 - 100 м³</li>
+                                <li data-ru="Длина: до 12 м" data-en="Length: up to 12 m">Длина: до 12 м</li>
+                                <li data-ru="Диаметр: до 3 м" data-en="Diameter: up to 3 m">Диаметр: до 3 м</li>
+                                <li data-ru="Давление: до 1,6 МПа" data-en="Pressure: up to 1.6 MPa">Давление: до 1,6 МПа</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tank-card">
+                    <div class="tank-image">⚗️</div>
+                    <div class="tank-content">
+                        <h3 data-ru="Сферические резервуары" data-en="Spherical Tanks">Сферические резервуары</h3>
+                        <p data-ru="Предназначены для хранения сжиженных углеводородных газов (СУГ) под давлением. Обеспечивают минимальную поверхность охлаждения." data-en="Designed for storing liquefied petroleum gases (LPG) under pressure. Provide minimal cooling surface.">Предназначены для хранения сжиженных углеводородных газов (СУГ) под давлением. Обеспечивают минимальную поверхность охлаждения.</p>
+                        <div class="tank-specs">
+                            <h4 data-ru="Характеристики" data-en="Specifications">Характеристики</h4>
+                            <ul>
+                                <li data-ru="Объём: 100 - 10 000 м³" data-en="Volume: 100 - 10,000 m³">Объём: 100 - 10 000 м³</li>
+                                <li data-ru="Давление: до 1,8 МПа" data-en="Pressure: up to 1.8 MPa">Давление: до 1,8 МПа</li>
+                                <li data-ru="Температура: -40°C до +50°C" data-en="Temperature: -40°C to +50°C">Температура: -40°C до +50°C</li>
+                                <li data-ru="Контроль: радарный уровнемер" data-en="Control: radar level gauge">Контроль: радарный уровнемер</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Systems -->
+    <section class="section safety-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-ru="Системы безопасности" data-en="Safety Systems">Системы безопасности</h2>
+                <p data-ru="Многоуровневая система защиты от разливов и аварий" data-en="Multi-level protection system against spills and emergencies">Многоуровневая система защиты от разливов и аварий</p>
+            </div>
+            
+            <div class="safety-grid">
+                <div class="safety-card">
+                    <h3><span>🛡️</span> <span data-ru="Первичное удержание" data-en="Primary Containment">Первичное удержание</span></h3>
+                    <ul>
+                        <li data-ru="Двустенные резервуары с контролируемым межстенным пространством" data-en="Double-walled tanks with monitored interstitial space">Двустенные резервуары с контролируемым межстенным пространством</li>
+                        <li data-ru="Антикоррозионная защита внутренних и наружных поверхностей" data-en="Anti-corrosion protection of internal and external surfaces">Антикоррозионная защита внутренних и наружных поверхностей</li>
+                        <li data-ru="Системы обнаружения утечек (сенсоры, индикаторы)" data-en="Leak detection systems (sensors, indicators)">Системы обнаружения утечек (сенсоры, индикаторы)</li>
+                        <li data-ru="Герметичные люки и арматура с двойным уплотнением" data-en="Sealed hatches and fittings with double sealing">Герметичные люки и арматура с двойным уплотнением</li>
+                        <li data-ru="Пожаростойкая изоляция резервуаров" data-en="Fire-resistant tank insulation">Пожаростойкая изоляция резервуаров</li>
+                    </ul>
+                </div>
+                
+                <div class="safety-card">
+                    <h3><span>🧱</span> <span data-ru="Вторичное удержание" data-en="Secondary Containment">Вторичное удержание</span></h3>
+                    <ul>
+                        <li data-ru="Ограждающие дамбы ёмкостью 110% от объёма largest tank" data-en="Bunding dikes with 110% capacity of largest tank">Ограждающие дамбы ёмкостью 110% от объёма largest tank</li>
+                        <li data-ru="Герметичное бетонное основание с гидроизоляцией" data-en="Sealed concrete foundation with waterproofing">Герметичное бетонное основание с гидроизоляцией</li>
+                        <li data-ru="Системы сбора и отвода дождевых и пожарных вод" data-en="Rainwater and firewater collection and drainage systems">Системы сбора и отвода дождевых и пожарных вод</li>
+                        <li data-ru="Мониторинг целостности поддонов (ультразвук, радиография)" data-en="Bund integrity monitoring (ultrasound, radiography)">Мониторинг целостности поддонов (ультразвук, радиография)</li>
+                        <li data-ru="Отстойники для разделения нефтепродуктов и воды" data-en="Separators for petroleum products and water separation">Отстойники для разделения нефтепродуктов и воды</li>
+                    </ul>
+                </div>
+                
+                <div class="safety-card">
+                    <h3><span>📡</span> <span data-ru="Контроль и автоматика" data-en="Control & Automation">Контроль и автоматика</span></h3>
+                    <ul>
+                        <li data-ru="Радарные и сервоприводные уровнемеры (SIL-rated)" data-en="Radar and servo level gauges (SIL-rated)">Радарные и сервоприводные уровнемеры (SIL-rated)</li>
+                        <li data-ru="Системы предотвращения перелива (Overfill Prevention)" data-en="Overfill prevention systems">Системы предотвращения перелива (Overfill Prevention)</li>
+                        <li data-ru="Автоматическое отключение при достижении критического уровня" data-en="Automatic shutdown at critical level">Автоматическое отключение при достижении критического уровня</li>
+                        <li data-ru="Телеметрия и удалённый мониторинг 24/7" data-en="Telemetry and remote monitoring 24/7">Телеметрия и удалённый мониторинг 24/7</li>
+                        <li data-ru="Видеонаблюдение с тепловизионными камерами" data-en="Video surveillance with thermal imaging cameras">Видеонаблюдение с тепловизионными камерами</li>
+                    </ul>
+                </div>
+                
+                <div class="safety-card">
+                    <h3><span>🔥</span> <span data-ru="Пожарная защита" data-en="Fire Protection">Пожарная защита</span></h3>
+                    <ul>
+                        <li data-ru="Стационарные системы пожаротушения (пенные, водяные)" data-en="Fixed fire extinguishing systems (foam, water)">Стационарные системы пожаротушения (пенные, водяные)</li>
+                        <li data-ru="Спринклерное охлажение резервуаров при пожаре" data-en="Sprinkler cooling of tanks during fire">Спринклерное охлажение резервуаров при пожаре</li>
+                        <li data-ru="Резервуары для пожарных вод с отстойниками" data-en="Fire water tanks with separators">Резервуары для пожарных вод с отстойниками</li>
+                        <li data-ru="Датчики пламени и взрывоопасных газов (IEC 61511)" data-en="Flame and explosive gas detectors (IEC 61511)">Датчики пламени и взрывоопасных газов (IEC 61511)</li>
+                        <li data-ru="Автоматические системы дымоудаления" data-en="Automatic smoke extraction systems">Автоматические системы дымоудаления</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section stats-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-ru="Наши мощности" data-en="Our Capacities">Наши мощности</h2>
+                <p data-ru="Современная инфраструктура для хранения нефтепродуктов" data-en="Modern infrastructure for petroleum products storage">Современная инфраструктура для хранения нефтепродуктов</p>
+            </div>
+            
+            <div class="stats-grid-4">
+                <div class="stat-card">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label" data-ru="м³ общий объём" data-en="m³ total volume">м³ общий объём</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label" data-ru="резервуаров" data-en="tanks">резервуаров</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label" data-ru="мониторинг" data-en="monitoring">мониторинг</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label" data-ru="безопасность" data-en="safety">безопасность</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 data-ru="АВТОДОРТРЕЙД-БТК" data-en="AVTODORTREID-BTK">АВТОДОРТРЕЙД-БТК</h3>
+                    <p data-ru="ООО «Автодортрейд-БТК» — российская компания, осуществляющая операционную деятельность в сфере нефтегазовых месторождений с 2002 года." data-en="LLC «Avtodortreid-BTK» is a Russian company operating in the oil and gas field sector since 2002.">ООО «Автодортрейд-БТК» — российская компания, осуществляющая операционную деятельность в сфере нефтегазовых месторождений с 2002 года.</p>
+                    <div class="social-links">
+                        <a href="#">in</a>
+                        <a href="#">f</a>
+                        <a href="#">@</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Компания" data-en="Company">Компания</h4>
+                    <ul>
+                        <li><a href="index.html#about" data-ru="О нас" data-en="About Us">О нас</a></li>
+                        <li><a href="index.html#info" data-ru="Реквизиты" data-en="Details">Реквизиты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Деятельность" data-en="Operations">Деятельность</h4>
+                    <ul>
+                        <li><a href="refinery.html" data-ru="Нефтепереработка" data-en="Oil Refining">Нефтепереработка</a></li>
+                        <li><a href="storage.html" data-ru="Хранение" data-en="Storage">Хранение</a></li>
+                        <li><a href="tanker.html" data-ru="Транспортировка" data-en="Transportation">Транспортировка</a></li>
+                        <li><a href="offshore.html" data-ru="Шельф" data-en="Offshore">Шельф</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Информация" data-en="Information">Информация</h4>
+                    <ul>
+                        <li><a href="index.html#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2002-2026 <span data-ru="ООО «Автодортрейд-БТК». Все права защищены." data-en="LLC «Avtodortreid-BTK». All rights reserved.">ООО «Автодортрейд-БТК». Все права защищены.</span></p>
+                <p data-ru="Оператор нефтегазовых активов" data-en="Oil & Gas Asset Operator">Оператор нефтегазовых активов</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('nav').classList.toggle('active');
+        }
+        
+        // Language switching functionality
+        function switchLang(lang) {
+            // Update button states
+            document.getElementById('btn-ru').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Update all elements with data attributes
+            const elements = document.querySelectorAll('[data-ru][data-en]');
+            elements.forEach(el => {
+                if (lang === 'en') {
+                    el.innerHTML = el.getAttribute('data-en');
+                } else {
+                    el.innerHTML = el.getAttribute('data-ru');
+                }
+            });
+            
+            // Update page language attribute
+            document.documentElement.lang = lang;
+            
+            // Save preference to localStorage
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        // Check for saved language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && savedLang !== 'ru') {
+                switchLang(savedLang);
+            }
+        });
+    </script>
+
+</body>
+</html>
