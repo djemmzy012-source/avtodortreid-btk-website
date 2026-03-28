@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="О компании ООО Автодортрейд-БТК - оператор нефтегазовых активов. История, миссия, география деятельности.">
+    <meta name="theme-color" content="#002147">
+    <title>О компании — ООО «Автодортрейд-БТК»</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #002147;
+            --secondary: #003366;
+            --accent: #c9a227;
+            --accent-hover: #d4af37;
+            --light: #f5f5f5;
+            --dark: #001529;
+            --text: #1a1a1a;
+            --text-light: #4a4a4a;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        .header {
+            background: var(--primary);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-top {
+            background: var(--dark);
+            padding: 8px 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(201,162,39,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .header-contact span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+            font-size: 0.85rem;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-switch a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.85rem;
+            border: 1px solid transparent;
+            user-select: none;
+        }
+
+        .lang-switch a:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-1px);
+        }
+
+        .lang-switch a.active {
+            color: var(--primary);
+            background: var(--accent);
+            border-color: var(--accent);
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(201,162,39,0.3);
+        }
+
+        .header-main {
+            padding: 12px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--primary);
+            box-shadow: 0 4px 12px rgba(201,162,39,0.3);
+            flex-shrink: 0;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .menu-toggle:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--secondary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 16px 24px;
+            display: block;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 3px solid transparent;
+            position: relative;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover {
+            background: rgba(255,255,255,0.08);
+            color: var(--accent-hover);
+        }
+
+        .nav a:hover::after {
+            width: 70%;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 120px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(201,162,39,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 40px 40px;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .page-header p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            background: var(--light);
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .breadcrumbs-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumbs a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumbs span {
+            color: var(--accent);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            max-width: 600px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+
+        /* About Content */
+        .about-content {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-image {
+            height: 400px;
+            background: linear-gradient(135deg, rgba(0,33,71,0.85) 0%, rgba(0,51,102,0.9) 100%),
+                        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            border: 3px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::after {
+            content: '⛽';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8rem;
+            opacity: 0.12;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+        }
+
+        .about-text h3 {
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+        }
+
+        /* History Timeline */
+        .history {
+            background: var(--light);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-hover));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            width: 50%;
+            padding: 0 40px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            top: 0;
+            box-shadow: 0 0 0 4px var(--accent);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent);
+        }
+
+        .timeline-year {
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Mission & Values */
+        .mission {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            position: relative;
+        }
+
+        .mission::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,162,39,0.1)" stroke-width="1"/></svg>');
+            background-size: 60px 60px;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mission-card {
+            background: rgba(255,255,255,0.06);
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid rgba(201,162,39,0.25);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-align: center;
+        }
+
+        .mission-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .mission-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(201,162,39,0.3);
+        }
+
+        .mission-card h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mission-card p {
+            opacity: 0.95;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Geography */
+        .geography {
+            background: white;
+        }
+
+        .geography-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .geography-map {
+            height: 400px;
+            background: linear-gradient(135deg, var(--light) 0%, white 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--accent);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .geography-map::before {
+            content: '🗺️';
+            font-size: 8rem;
+            opacity: 0.1;
+        }
+
+        .geography-text h3 {
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .geography-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .geography-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .geography-list li {
+            padding: 15px 0;
+            padding-left: 35px;
+            position: relative;
+            border-bottom: 1px solid #e5e7eb;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .geography-list li::before {
+            content: '📍';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+            border-top: 4px solid var(--accent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            color: var(--accent);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-brand p {
+            opacity: 0.85;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201,162,39,0.3);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+            padding-left: 8px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(201,162,39,0.2);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            border: 2px solid rgba(201,162,39,0.4);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(201,162,39,0.3);
+        }
+
+        /* ================= MOBILE RESPONSIVE ================= */
+        
+        @media (max-width: 1024px) {
+            .about-grid,
+            .geography-content {
+                gap: 40px;
+            }
+            
+            .mission-grid {
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+
+            .header-top-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .header-contact {
+                gap: 15px;
+                font-size: 0.8rem;
+            }
+
+            .header-main {
+                padding: 10px 0;
+            }
+
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+
+            .logo-text h1 {
+                font-size: 1.1rem;
+            }
+
+            .logo-text p {
+                font-size: 0.65rem;
+                letter-spacing: 1px;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--primary);
+                z-index: 1001;
+                transition: right 0.3s ease;
+                padding-top: 80px;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.3);
+            }
+
+            .nav.active {
+                right: 0;
+            }
+
+            .nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .nav a {
+                padding: 18px 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                font-size: 1rem;
+            }
+
+            .nav a::after {
+                display: none;
+            }
+
+            .nav a:hover {
+                background: rgba(201,162,39,0.1);
+                padding-left: 30px;
+            }
+
+            .page-header {
+                margin-top: 110px;
+                padding: 60px 0;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .about-grid,
+            .geography-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image {
+                height: 300px;
+                order: -1;
+            }
+
+            .about-image::after {
+                font-size: 6rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 60px;
+                padding-right: 0;
+                text-align: left !important;
+            }
+
+            .timeline-dot {
+                left: 10px !important;
+                right: auto !important;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .mission-card {
+                padding: 30px 25px;
+            }
+
+            .geography-map {
+                height: 300px;
+                order: -1;
+            }
+
+            .geography-map::before {
+                font-size: 6rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                text-align: center;
+            }
+
+            .footer-brand h3 {
+                font-size: 1.4rem;
+            }
+
+            .footer-section h4 {
+                padding-bottom: 8px;
+            }
+
+            .footer-section a:hover {
+                padding-left: 0;
+                color: var(--accent);
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .timeline-content {
+                padding: 20px;
+            }
+
+            .mission-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .social-links a {
+                width: 38px;
+                height: 38px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <span data-ru="📍 Москва, Россия" data-en="📍 Moscow, Russia">📍 Москва, Россия</span>
+                        <span>📞 +7 (495) XXX-XX-XX</span>
+                        <span>✉️ info@avtodortreid-btk.ru</span>
+                    </div>
+                    <div class="lang-switch">
+                        <a onclick="switchLang('ru')" id="btn-ru" class="active">RU</a>
+                        <a onclick="switchLang('en')" id="btn-en">EN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="header-main" style="position: relative;">
+                <div class="logo">
+                    <div class="logo-icon">АД</div>
+                    <div class="logo-text">
+                        <h1 data-ru="АВТОДОРТРЕЙД-БТК" data-en="AVTODORTREID-BTK">АВТОДОРТРЕЙД-БТК</h1>
+                        <p data-ru="Оператор нефтегазовых активов" data-en="Oil & Gas Asset Operator">Оператор нефтегазовых активов</p>
+                    </div>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            </div>
+        </div>
+
+        <nav class="nav" id="nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html" onclick="closeMenu()" data-ru="Главная" data-en="Home">Главная</a></li>
+                    <li><a href="about.html" onclick="closeMenu()" data-ru="О компании" data-en="About">О компании</a></li>
+                    <li><a href="index.html#services" onclick="closeMenu()" data-ru="Деятельность" data-en="Operations">Деятельность</a></li>
+                    <li><a href="index.html#contact" onclick="closeMenu()" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 data-ru="О компании" data-en="About Company">О компании</h1>
+                <p data-ru="История, миссия и ценности ООО «Автодортрейд-БТК»" data-en="History, mission and values of LLC «Avtodortreid-BTK»">История, миссия и ценности ООО «Автодортрейд-БТК»</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="breadcrumbs-content">
+                <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+                <span>/</span>
+                <span data-ru="О компании" data-en="About Company">О компании</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Content -->
+    <section class="section about-content">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-ru="Кто мы есть" data-en="Who We Are">Кто мы есть</h2>
+                <p data-ru="Надёжный партнёр в нефтегазовой отрасли с 2002 года" data-en="Reliable partner in the oil and gas industry since 2002">Надёжный партнёр в нефтегазовой отрасли с 2002 года</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-image"></div>
+                <div class="about-text">
+                    <h3 data-ru="Компания с многолетней историей" data-en="Company with Long History">Компания с многолетней историей</h3>
+                    <p data-ru="ООО «Автодортрейд-БТК» было основано в 2002 году и с тех пор успешно осуществляет операционную деятельность в сфере нефтегазовых месторождений. За более чем 20 лет работы мы накопили значительный опыт в управлении активами нефтегазовой отрасли." data-en="LLC «Avtodortreid-BTK» was founded in 2002 and has since successfully operated in the oil and gas field sector. Over more than 20 years of operation, we have accumulated significant experience in oil and gas asset management.">ООО «Автодортрейд-БТК» было основано в 2002 году и с тех пор успешно осуществляет операционную деятельность в сфере нефтегазовых месторождений. За более чем 20 лет работы мы накопили значительный опыт в управлении активами нефтегазовой отрасли.</p>
+                    <p data-ru="Наша компания специализируется на управлении активами нефтегазовой отрасли, обеспечивая эффективную эксплуатацию месторождений и поставку углеводородов. Мы работаем в соответствии с высочайшими стандартами отрасли и постоянно совершенствуем наши процессы." data-en="Our company specializes in oil and gas asset management, ensuring efficient field operation and hydrocarbon supply. We operate in accordance with the highest industry standards and continuously improve our processes.">Наша компания специализируется на управлении активами нефтегазовой отрасли, обеспечивая эффективную эксплуатацию месторождений и поставку углеводородов. Мы работаем в соответствии с высочайшими стандартами отрасли и постоянно совершенствуем наши процессы.</p>
+                    <p data-ru="Штаб-квартира компании расположена в Москве, что позволяет нам эффективно координировать операционную деятельность и поддерживать тесные связи с ключевыми партнёрами и заказчиками в энергетическом секторе." data-en="The company's headquarters is located in Moscow, allowing us to efficiently coordinate operational activities and maintain close relationships with key partners and customers in the energy sector.">Штаб-квартира компании расположена в Москве, что позволяет нам эффективно координировать операционную деятельность и поддерживать тесные связи с ключевыми партнёрами и заказчиками в энергетическом секторе.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Timeline -->
+    <section class="section history">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-ru="История компании" data-en="Company History">История компании</h2>
+                <p data-ru="Ключевые вехи нашего развития" data-en="Key milestones in our development">Ключевые вехи нашего развития</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2002</div>
+                        <h4 data-ru="Основание компании" data-en="Company Foundation">Основание компании</h4>
+                        <p data-ru="Регистрация ООО «Автодортрейд-БТК» 3 января 2002 года. Начало операционной деятельности в сфере нефтегазовых активов." data-en="Registration of LLC «Avtodortreid-BTK» on January 3, 2002. Beginning of operational activities in the oil and gas sector.">Регистрация ООО «Автодортрейд-БТК» 3 января 2002 года. Начало операционной деятельности в сфере нефтегазовых активов.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2005</div>
+                        <h4 data-ru="Расширение операций" data-en="Expansion of Operations">Расширение операций</h4>
+                        <p data-ru="Увеличение масштабов операционной деятельности, выход на новые месторождения и расширение географии присутствия." data-en="Increased scale of operational activities, entry into new fields and expansion of geographic presence.">Увеличение масштабов операционной деятельности, выход на новые месторождения и расширение географии присутствия.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2010</div>
+                        <h4 data-ru="Оптимизация процессов" data-en="Process Optimization">Оптимизация процессов</h4>
+                        <p data-ru="Внедрение современных систем управления активами и повышение эффективности операционной деятельности." data-en="Implementation of modern asset management systems and improvement of operational efficiency.">Внедрение современных систем управления активами и повышение эффективности операционной деятельности.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <h4 data-ru="Укрепление позиций" data-en="Strengthening Positions">Укрепление позиций</h4>
+                        <p data-ru="Закрепление статуса надёжного оператора нефтегазовых активов, расширение партнёрской сети." data-en="Consolidation of status as a reliable oil and gas asset operator, expansion of partner network.">Закрепление статуса надёжного оператора нефтегазовых активов, расширение партнёрской сети.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020+</div>
+                        <h4 data-ru="Современный этап" data-en="Modern Era">Современный этап</h4>
+                        <p data-ru="Постоянное развитие и адаптация к современным вызовам энергетического сектора, внедрение инновационных решений." data-en="Continuous development and adaptation to modern challenges of the energy sector, implementation of innovative solutions.">Постоянное развитие и адаптация к современным вызовам энергетического сектора, внедрение инновационных решений.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="section mission">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;" data-ru="Миссия и ценности" data-en="Mission & Values">Миссия и ценности</h2>
+                <p style="color: rgba(255,255,255,0.9);" data-ru="Принципы, которыми мы руководствуемся" data-en="Principles that guide us">Принципы, которыми мы руководствуемся</p>
+            </div>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">🎯</div>
+                    <h3 data-ru="Наша миссия" data-en="Our Mission">Наша миссия</h3>
+                    <p data-ru="Обеспечение эффективной эксплуатации нефтегазовых активов и надёжной поставки энергоресурсов для устойчивого развития энергетического сектора." data-en="Ensuring efficient operation of oil and gas assets and reliable supply of energy resources for sustainable development of the energy sector.">Обеспечение эффективной эксплуатации нефтегазовых активов и надёжной поставки энергоресурсов для устойчивого развития энергетического сектора.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">⚡</div>
+                    <h3 data-ru="Эффективность" data-en="Efficiency">Эффективность</h3>
+                    <p data-ru="Мы постоянно стремимся к оптимизации процессов и повышению эффективности операционной деятельности на всех уровнях." data-en="We constantly strive to optimize processes and improve operational efficiency at all levels.">Мы постоянно стремимся к оптимизации процессов и повышению эффективности операционной деятельности на всех уровнях.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">🤝</div>
+                    <h3 data-ru="Надёжность" data-en="Reliability">Надёжность</h3>
+                    <p data-ru="Мы строим долгосрочные партнёрства на основе доверия, прозрачности и выполнения обязательств." data-en="We build long-term partnerships based on trust, transparency and fulfillment of obligations.">Мы строим долгосрочные партнёрства на основе доверия, прозрачности и выполнения обязательств.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Geography -->
+    <section class="section geography">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-ru="География деятельности" data-en="Geography of Operations">География деятельности</h2>
+                <p data-ru="Местоположение и зона присутствия" data-en="Location and presence area">Местоположение и зона присутствия</p>
+            </div>
+            
+            <div class="geography-content">
+                <div class="geography-text">
+                    <h3 data-ru="Центральный офис в Москве" data-en="Head Office in Moscow">Центральный офис в Москве</h3>
+                    <p data-ru="Штаб-квартира ООО «Автодортрейд-БТК» расположена в Москве по адресу: 5-я улица Ямского Поля, дом 23/25, корпус 2. Это стратегическое расположение обеспечивает удобный доступ к ключевым партнёрам и инфраструктуре энергетического сектора." data-en="The headquarters of LLC «Avtodortreid-BTK» is located in Moscow at: 5-Ya Yamskogo Polya St, 23/25 Bld 2. This strategic location provides convenient access to key partners and energy sector infrastructure.">Штаб-квартира ООО «Автодортрейд-БТК» расположена в Москве по адресу: 5-я улица Ямского Поля, дом 23/25, корпус 2. Это стратегическое расположение обеспечивает удобный доступ к ключевым партнёрам и инфраструктуре энергетического сектора.</p>
+                    <p data-ru="Компания осуществляет операционную деятельность на территории Российской Федерации в секторе нефтегазовых месторождений." data-en="The company carries out operational activities in the Russian Federation in the oil and gas field sector.">Компания осуществляет операционную деятельность на территории Российской Федерации в секторе нефтегазовых месторождений.</p>
+                    
+                    <ul class="geography-list">
+                        <li data-ru="Центральный офис: Москва, 5-я улица Ямского Поля, 23/25 корп. 2" data-en="Head Office: Moscow, 5-Ya Yamskogo Polya St, 23/25 Bld 2">Центральный офис: Москва, 5-я улица Ямского Поля, 23/25 корп. 2</li>
+                        <li data-ru="Почтовый индекс: 123557" data-en="Postal Code: 123557">Почтовый индекс: 123557</li>
+                        <li data-ru="Страна: Российская Федерация" data-en="Country: Russian Federation">Страна: Российская Федерация</li>
+                        <li data-ru="Сектор: Energy (Энергетика)" data-en="Sector: Energy">Сектор: Energy (Энергетика)</li>
+                        <li data-ru="Отрасль: Oil & Gas (Нефть и газ)" data-en="Industry: Oil & Gas">Отрасль: Oil & Gas (Нефть и газ)</li>
+                    </ul>
+                </div>
+                <div class="geography-map"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 data-ru="АВТОДОРТРЕЙД-БТК" data-en="AVTODORTREID-BTK">АВТОДОРТРЕЙД-БТК</h3>
+                    <p data-ru="ООО «Автодортрейд-БТК» — российская компания, осуществляющая операционную деятельность в сфере нефтегазовых месторождений с 2002 года." data-en="LLC «Avtodortreid-BTK» is a Russian company operating in the oil and gas field sector since 2002.">ООО «Автодортрейд-БТК» — российская компания, осуществляющая операционную деятельность в сфере нефтегазовых месторождений с 2002 года.</p>
+                    <div class="social-links">
+                        <a href="#">in</a>
+                        <a href="#">f</a>
+                        <a href="#">@</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Компания" data-en="Company">Компания</h4>
+                    <ul>
+                        <li><a href="about.html" data-ru="О нас" data-en="About Us">О нас</a></li>
+                        <li><a href="index.html#info" data-ru="Реквизиты" data-en="Details">Реквизиты</a></li>
+                        <li><a href="#" data-ru="История" data-en="History">История</a></li>
+                        <li><a href="#" data-ru="Карьера" data-en="Careers">Карьера</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Деятельность" data-en="Operations">Деятельность</h4>
+                    <ul>
+                        <li><a href="index.html#services" data-ru="Направления" data-en="Operations">Направления</a></li>
+                        <li><a href="#" data-ru="Проекты" data-en="Projects">Проекты</a></li>
+                        <li><a href="#" data-ru="Партнёры" data-en="Partners">Партнёры</a></li>
+                        <li><a href="#" data-ru="Закупки" data-en="Procurement">Закупки</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Информация" data-en="Information">Информация</h4>
+                    <ul>
+                        <li><a href="index.html#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+                        <li><a href="#" data-ru="Пресс-центр" data-en="Press Center">Пресс-центр</a></li>
+                        <li><a href="#" data-ru="Документы" data-en="Documents">Документы</a></li>
+                        <li><a href="#" data-ru="Карта сайта" data-en="Sitemap">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2002-2026 <span data-ru="ООО «Автодортрейд-БТК». Все права защищены." data-en="LLC «Avtodortreid-BTK». All rights reserved.">ООО «Автодортрейд-БТК». Все права защищены.</span></p>
+                <p data-ru="Оператор нефтегазовых активов" data-en="Oil & Gas Asset Operator">Оператор нефтегазовых активов</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const nav = document.getElementById('nav');
+            const toggle = document.querySelector('.menu-toggle');
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Language switching functionality
+        function switchLang(lang) {
+            // Update button states
+            document.getElementById('btn-ru').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Update all elements with data attributes
+            const elements = document.querySelectorAll('[data-ru][data-en]');
+            elements.forEach(el => {
+                if (lang === 'en') {
+                    el.innerHTML = el.getAttribute('data-en');
+                } else {
+                    el.innerHTML = el.getAttribute('data-ru');
+                }
+            });
+            
+            // Update page language attribute
+            document.documentElement.lang = lang;
+            
+            // Update meta description for SEO
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (lang === 'en') {
+                metaDesc.content = "About LLC Avtodortreid-BTK - Oil & Gas Asset Operator. History, mission, geography of operations.";
+            } else {
+                metaDesc.content = "О компании ООО Автодортрейд-БТК - оператор нефтегазовых активов. История, миссия, география деятельности.";
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 120;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+
+</body>
+</html>s
