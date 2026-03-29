@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="Карта сайта ООО «Автодортрейд-БТК». Полная структура сайта. Sitemap of LLC «Avtodortreid-BTK». Full website structure.">
     <meta name="theme-color" content="#002147">
-    <title data-ru="Карта сайта — ООО «Автодортрейд-БТК»" data-en="Sitemap — LLC «Avtodortreid-BTK»">Карта сайта — ООО «Автодортрейд-БТК»</title>
+    <title>Карта сайта — ООО «Автодортрейд-БТК»</title>
     <style>
         * {
             margin: 0;
@@ -45,7 +45,7 @@
         /* Header */
         .header {
             background: var(--primary);
-            color: white;
+            color: var(--white);
             position: fixed;
             width: 100%;
             top: 0;
@@ -55,7 +55,7 @@
 
         .header-top {
             background: var(--dark);
-            padding: 8px 0;
+            padding: 6px 0;
             font-size: 0.85rem;
             border-bottom: 1px solid rgba(201,162,39,0.3);
         }
@@ -86,6 +86,7 @@
             gap: 8px;
             opacity: 0.9;
             font-size: 0.85rem;
+            color: white;
         }
 
         .lang-switch {
@@ -121,7 +122,8 @@
         }
 
         .header-main {
-            padding: 12px 0;
+            background: var(--primary);
+            padding: 6px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -133,42 +135,19 @@
             gap: 12px;
         }
 
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.3rem;
-            color: var(--primary);
-            box-shadow: 0 4px 12px rgba(201,162,39,0.3);
-            flex-shrink: 0;
+        .logo img {
+            height: 50px;
+            width: auto;
+            max-width: 340px;
+            object-fit: contain;
         }
 
-        .logo-text h1 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            margin-bottom: 2px;
-            line-height: 1.2;
-        }
-
-        .logo-text p {
-            font-size: 0.7rem;
-            opacity: 0.85;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 500;
-        }
-
+        /* Mobile Menu Toggle */
         .menu-toggle {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--accent);
             font-size: 1.5rem;
             cursor: pointer;
             padding: 8px;
@@ -176,9 +155,14 @@
             transition: background 0.3s;
         }
 
+        .menu-toggle:hover {
+            background: rgba(201,162,39,0.15);
+        }
+
+        /* Navigation */
         .nav {
             background: var(--secondary);
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(201,162,39,0.3);
         }
 
         .nav ul {
@@ -192,7 +176,7 @@
         .nav a {
             color: white;
             text-decoration: none;
-            padding: 16px 24px;
+            padding: 14px 22px;
             display: block;
             transition: all 0.3s ease;
             font-size: 0.85rem;
@@ -215,18 +199,18 @@
             transition: width 0.3s ease;
         }
 
-        .nav a:hover, .nav a.active {
+        .nav a:hover {
             background: rgba(255,255,255,0.08);
             color: var(--accent-hover);
         }
 
-        .nav a:hover::after, .nav a.active::after {
+        .nav a:hover::after {
             width: 70%;
         }
 
         /* Page Header */
         .page-header {
-            margin-top: 120px;
+            margin-top: 115px;
             background: linear-gradient(135deg, rgba(0,33,71,0.95) 0%, rgba(0,51,102,0.95) 100%),
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(201,162,39,0.2)" stroke-width="2"/></svg>');
             background-size: cover, 40px 40px;
@@ -268,6 +252,7 @@
             margin: 0 auto;
         }
 
+        /* Breadcrumbs */
         .breadcrumbs {
             background: var(--light);
             padding: 20px 0;
@@ -301,27 +286,36 @@
         .section-title {
             text-align: center;
             margin-bottom: 50px;
+            padding: 0 20px;
         }
 
         .section-title h2 {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
             color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             position: relative;
             display: inline-block;
         }
 
         .section-title h2::after {
             content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            display: block;
             width: 60px;
             height: 4px;
             background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+            margin: 16px auto 0;
             border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            max-width: 600px;
+            margin: 20px auto 0;
+            line-height: 1.6;
         }
 
         /* Sitemap Grid */
@@ -337,6 +331,12 @@
             padding: 30px;
             box-shadow: var(--shadow);
             border-top: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .sitemap-column:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
 
         .sitemap-column h3 {
@@ -440,6 +440,7 @@
             justify-content: center;
             margin: 0 auto 15px;
             font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(201,162,39,0.3);
         }
 
         .quick-link-card h4 {
@@ -472,17 +473,34 @@
             border-radius: 16px;
             color: white;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .seo-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,162,39,0.1)" stroke-width="1"/></svg>');
+            background-size: 60px 60px;
         }
 
         .seo-info h3 {
             font-size: 1.5rem;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .seo-info p {
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
         }
 
         .seo-meta {
@@ -490,6 +508,8 @@
             justify-content: center;
             gap: 40px;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
 
         .seo-meta-item {
@@ -512,157 +532,207 @@
         .footer {
             background: var(--dark);
             color: white;
-            padding: 60px 0 30px;
+            padding: 70px 0 30px;
+            border-top: 4px solid var(--accent);
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .footer-brand h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
             color: var(--accent);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
         .footer-brand p {
-            opacity: 0.8;
-            line-height: 1.7;
+            opacity: 0.85;
+            line-height: 1.9;
+            margin-bottom: 25px;
             font-size: 0.95rem;
         }
 
-        .footer-column h4 {
+        .footer-section h4 {
             color: var(--accent);
-            font-size: 1rem;
             margin-bottom: 20px;
+            font-size: 0.95rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201,162,39,0.3);
         }
 
-        .footer-column ul {
+        .footer-section ul {
             list-style: none;
         }
 
-        .footer-column li {
-            margin-bottom: 12px;
-        }
-
-        .footer-column a {
-            color: rgba(255,255,255,0.7);
+        .footer-section a {
+            color: rgba(255,255,255,0.75);
             text-decoration: none;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            display: block;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
-        .footer-column a:hover {
+        .footer-section a:hover {
             color: var(--accent);
-            padding-left: 5px;
+            padding-left: 8px;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(201,162,39,0.2);
             padding-top: 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 0.85rem;
+            opacity: 0.8;
             flex-wrap: wrap;
             gap: 15px;
         }
 
-        .footer-bottom p {
-            opacity: 0.6;
-            font-size: 0.9rem;
+        .social-links {
+            display: flex;
+            gap: 12px;
         }
 
-        /* Toast Notification */
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--primary);
-            color: white;
-            padding: 16px 24px;
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            border: 2px solid rgba(201,162,39,0.4);
             border-radius: 8px;
-            box-shadow: var(--shadow-lg);
             display: flex;
             align-items: center;
-            gap: 12px;
-            transform: translateY(100px);
-            opacity: 0;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
             transition: all 0.3s ease;
-            z-index: 9999;
-            border-left: 4px solid var(--accent);
+            font-weight: 700;
+            font-size: 1rem;
         }
 
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
+        .social-links a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(201,162,39,0.3);
         }
 
-        .toast-icon {
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
+        /* ================= MOBILE RESPONSIVE ================= */
 
-        /* Responsive */
+        /* Tablet */
         @media (max-width: 1024px) {
             .sitemap-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .quick-links-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
+
+            .logo img {
+                height: 42px;
+                max-width: 280px;
             }
         }
 
+        /* Mobile Large */
         @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+
             .header-top-content {
                 flex-direction: column;
-                text-align: center;
+                align-items: flex-start;
+                gap: 12px;
             }
 
             .header-contact {
-                justify-content: center;
+                gap: 15px;
+                font-size: 0.8rem;
             }
 
+            .header-main {
+                padding: 4px 0;
+            }
+
+            .logo img {
+                height: 36px;
+                max-width: 240px;
+            }
+
+            /* Mobile Menu */
             .menu-toggle {
                 display: block;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
             }
 
             .nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--secondary);
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--primary);
+                z-index: 1001;
+                transition: right 0.3s ease;
+                padding-top: 80px;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.3);
             }
 
             .nav.active {
-                display: block;
+                right: 0;
             }
 
             .nav ul {
                 flex-direction: column;
+                padding: 20px;
             }
 
             .nav a {
-                padding: 15px 20px;
+                padding: 18px 20px;
                 border-bottom: 1px solid rgba(255,255,255,0.1);
+                font-size: 1rem;
+            }
+
+            .nav a::after {
+                display: none;
+            }
+
+            .nav a:hover {
+                background: rgba(201,162,39,0.1);
+                padding-left: 30px;
             }
 
             .page-header {
-                margin-top: 140px;
+                margin-top: 105px;
                 padding: 50px 0;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
             }
 
             .sitemap-grid {
@@ -679,71 +749,145 @@
 
             .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 35px;
                 text-align: center;
             }
 
-            .footer-column a {
-                justify-content: center;
+            .footer-brand h3 {
+                font-size: 1.4rem;
+            }
+
+            .footer-section h4 {
+                padding-bottom: 8px;
+            }
+
+            .footer-section a:hover {
+                padding-left: 0;
+                color: var(--accent);
             }
 
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
+                gap: 15px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        /* Mobile Small */
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .header-contact span {
+                font-size: 0.75rem;
+            }
+
+            .lang-switch a {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
+
+            .logo img {
+                height: 32px;
+                max-width: 210px;
+            }
+
+            .footer {
+                padding: 50px 0 25px;
+            }
+
+            .social-links a {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) {
+            .sitemap-column:hover,
+            .quick-link-card:hover {
+                transform: none;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .header,
+            .footer,
+            .menu-toggle {
+                display: none;
+            }
+
+            .page-header {
+                margin-top: 0;
+                height: auto;
+                page-break-after: avoid;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
 <base target="_blank">
 </head>
 <body>
+
     <!-- Header -->
     <header class="header">
         <div class="header-top">
             <div class="container">
                 <div class="header-top-content">
                     <div class="header-contact">
-                        <span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                            <span data-ru="+7 (495) 411-77-77" data-en="+7 (495) 411-77-77">+7 (495) 411-77-77</span>
-                        </span>
-                        <span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                            <span data-ru="info@avtodortreid.ru" data-en="info@avtodortreid.ru">info@avtodortreid.ru</span>
-                        </span>
+                        <span data-ru="📍 Москва, Россия" data-en="📍 Moscow, Russia">📍 Москва, Россия</span>
+                        <span>📞 +7 (495) XXX-XX-XX</span>
+                        <span>✉️ info@avtodortreid-btk.ru</span>
                     </div>
                     <div class="lang-switch">
-                        <a href="#" class="active" onclick="setLanguage('ru'); return false;">RU</a>
-                        <a href="#" onclick="setLanguage('en'); return false;">EN</a>
+                        <a onclick="switchLang('ru')" id="btn-ru" class="active">RU</a>
+                        <a onclick="switchLang('en')" id="btn-en">EN</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="header-main">
-            <div class="container">
+
+        <div class="container">
+            <div class="header-main" style="position: relative;">
                 <div class="logo">
-                    <div class="logo-icon">АД</div>
-                    <div class="logo-text">
-                        <h1 data-ru="Автодортрейд-БТК" data-en="Avtodortreid-BTK">Автодортрейд-БТК</h1>
-                        <p data-ru="Производство нерудных материалов" data-en="Non-metallic materials production">Производство нерудных материалов</p>
-                    </div>
+                    <img src="https://z-cdn-media.chatglm.cn/files/1a13b0e8-2fb8-4cb9-8b24-3e6034d06e95.png?auth_key=1874754015-263e208c6bbd4ca0b61609edd4f1f64f-0-e3d9e78fb633958e7593249ffef8a330" alt="AVTODORTREID-BTK">
                 </div>
-                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
             </div>
         </div>
-        <nav class="nav" id="mainNav">
+
+        <nav class="nav" id="nav">
             <div class="container">
                 <ul>
-                    <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
-                    <li><a href="about.html" data-ru="О компании" data-en="About">О компании</a></li>
-                    <li><a href="history.html" data-ru="История" data-en="History">История</a></li>
-                    <li><a href="careers.html" data-ru="Карьера" data-en="Careers">Карьера</a></li>
-                    <li><a href="press.html" data-ru="Пресс-центр" data-en="Press Center">Пресс-центр</a></li>
-                    <li><a href="documents.html" data-ru="Документы" data-en="Documents">Документы</a></li>
-                    <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+                    <li><a href="index.html" onclick="closeMenu()" data-ru="Главная" data-en="Home">Главная</a></li>
+                    <li><a href="history.html" onclick="closeMenu()" data-ru="История" data-en="History">История</a></li>
+                    <li><a href="careers.html" onclick="closeMenu()" data-ru="Карьера" data-en="Careers">Карьера</a></li>
+                    <li><a href="press.html" onclick="closeMenu()" data-ru="Пресс-центр" data-en="Press Center">Пресс-центр</a></li>
+                    <li><a href="documents.html" onclick="closeMenu()" data-ru="Документы" data-en="Documents">Документы</a></li>
+                    <li><a href="index.html#about" onclick="closeMenu()" data-ru="Контакты" data-en="Contact">Контакты</a></li>
                 </ul>
             </div>
         </nav>
@@ -783,9 +927,9 @@
                     <h3><span>🏠</span> <span data-ru="Основные" data-en="Main">Основные</span></h3>
                     <ul class="sitemap-list">
                         <li><a href="index.html" data-ru="Главная страница" data-en="Homepage">Главная страница</a></li>
-                        <li><a href="about.html" data-ru="О компании" data-en="About Us">О компании</a></li>
+                        <li><a href="index.html#about" data-ru="О компании" data-en="About Us">О компании</a></li>
                         <li><a href="history.html" data-ru="История компании" data-en="Company History">История компании</a></li>
-                        <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+                        <li><a href="index.html#contact" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
                         <li><a href="sitemap.html" data-ru="Карта сайта" data-en="Sitemap">Карта сайта</a></li>
                     </ul>
                 </div>
@@ -794,26 +938,24 @@
                 <div class="sitemap-column">
                     <h3><span>🏢</span> <span data-ru="О компании" data-en="Company Info">О компании</span></h3>
                     <ul class="sitemap-list">
-                        <li><a href="about.html" data-ru="Общая информация" data-en="General Information">Общая информация</a></li>
+                        <li><a href="index.html#about" data-ru="Общая информация" data-en="General Information">Общая информация</a></li>
                         <li><a href="history.html" data-ru="История и достижения" data-en="History & Achievements">История и достижения</a></li>
                         <li><a href="documents.html" data-ru="Документы" data-en="Documents">Документы</a></li>
                         <li class="sub-item"><a href="documents.html#certificates" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a></li>
                         <li class="sub-item"><a href="documents.html#license" data-ru="Лицензии" data-en="Licenses">Лицензии</a></li>
-                        <li><a href="requisites.html" data-ru="Реквизиты" data-en="Requisites">Реквизиты</a></li>
+                        <li><a href="index.html#info" data-ru="Реквизиты" data-en="Requisites">Реквизиты</a></li>
                     </ul>
                 </div>
 
-                <!-- Products & Services -->
+                <!-- Operations -->
                 <div class="sitemap-column">
-                    <h3><span>🏗️</span> <span data-ru="Продукция" data-en="Products">Продукция</span></h3>
+                    <h3><span>⛽</span> <span data-ru="Деятельность" data-en="Operations">Деятельность</span></h3>
                     <ul class="sitemap-list">
-                        <li><a href="products.html" data-ru="Вся продукция" data-en="All Products">Вся продукция</a></li>
-                        <li class="sub-item"><a href="products.html#gravel" data-ru="Щебень" data-en="Crushed Stone">Щебень</a></li>
-                        <li class="sub-item"><a href="products.html#sand" data-ru="Песок" data-en="Sand">Песок</a></li>
-                        <li class="sub-item"><a href="products.html#pgm" data-ru="ПГС" data-en="Sand-Gravel Mix">ПГС</a></li>
-                        <li><a href="services.html" data-ru="Услуги" data-en="Services">Услуги</a></li>
-                        <li><a href="delivery.html" data-ru="Доставка" data-en="Delivery">Доставка</a></li>
-                        <li><a href="price.html" data-ru="Прайс-лист" data-en="Price List">Прайс-лист</a></li>
+                        <li><a href="index.html#services" data-ru="Все направления" data-en="All Operations">Все направления</a></li>
+                        <li class="sub-item"><a href="refinery.html" data-ru="Нефтепереработка" data-en="Oil Refining">Нефтепереработка</a></li>
+                        <li class="sub-item"><a href="storage.html" data-ru="Хранение нефти" data-en="Oil Storage">Хранение нефти</a></li>
+                        <li class="sub-item"><a href="tanker.html" data-ru="Морская транспортировка" data-en="Maritime Transport">Морская транспортировка</a></li>
+                        <li class="sub-item"><a href="offshore.html" data-ru="Шельфовая добыча" data-en="Offshore Production">Шельфовая добыча</a></li>
                     </ul>
                 </div>
 
@@ -845,13 +987,13 @@
                     <div class="quick-link-icon">📋</div>
                     <h4 data-ru="Реквизиты" data-en="Requisites">Реквизиты</h4>
                     <p data-ru="Юридические данные компании" data-en="Company legal details">Юридические данные компании</p>
-                    <a href="requisites.html" data-ru="Перейти →" data-en="Go to →">Перейти →</a>
+                    <a href="index.html#info" data-ru="Перейти →" data-en="Go to →">Перейти →</a>
                 </div>
                 <div class="quick-link-card">
                     <div class="quick-link-icon">📞</div>
                     <h4 data-ru="Контакты" data-en="Contacts">Контакты</h4>
-                    <p data-ru="Телефоны и адреса офисов" data-en="Phones and office addresses">Телефоны и адреса офисов</p>
-                    <a href="contacts.html" data-ru="Перейти →" data-en="Go to →">Перейти →</a>
+                    <p data-ru="Телефоны и адрес офиса" data-en="Phone and office address">Телефоны и адрес офиса</p>
+                    <a href="index.html#contact" data-ru="Перейти →" data-en="Go to →">Перейти →</a>
                 </div>
                 <div class="quick-link-card">
                     <div class="quick-link-icon">💼</div>
@@ -868,7 +1010,7 @@
         <div class="container">
             <div class="seo-info">
                 <h3 data-ru="Информация о сайте" data-en="Website Information">Информация о сайте</h3>
-                <p data-ru="Официальный веб-сайт ООО «Автодортрейд-БТК» — ведущего производителя нерудных строительных материалов в России" data-en="Official website of LLC «Avtodortreid-BTK» — leading producer of non-metallic construction materials in Russia">Официальный веб-сайт ООО «Автодортрейд-БТК» — ведущего производителя нерудных строительных материалов в России</p>
+                <p data-ru="Официальный веб-сайт ООО «Автодортрейд-БТК» — оператора нефтегазовых активов с 2002 года" data-en="Official website of LLC «Avtodortreid-BTK» — Oil & Gas Asset Operator since 2002">Официальный веб-сайт ООО «Автодортрейд-БТК» — оператора нефтегазовых активов с 2002 года</p>
                 <div class="seo-meta">
                     <div class="seo-meta-item">
                         <span>10+</span>
@@ -879,8 +1021,8 @@
                         <span data-ru="Языка" data-en="Languages">Языка</span>
                     </div>
                     <div class="seo-meta-item">
-                        <span>22+</span>
-                        <span data-ru="Года опыта" data-en="Years of experience">Года опыта</span>
+                        <span>20+</span>
+                        <span data-ru="Лет на рынке" data-en="Years in Market">Лет на рынке</span>
                     </div>
                 </div>
             </div>
@@ -892,95 +1034,116 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3 data-ru="ООО «Автодортрейд-БТК»" data-en="LLC «Avtodortreid-BTK»">ООО «Автодортрейд-БТК»</h3>
-                    <p data-ru="Ведущий производитель нерудных строительных материалов с 2002 года. Качество, проверенное временем." data-en="Leading producer of non-metallic construction materials since 2002. Quality tested by time.">Ведущий производитель нерудных строительных материалов с 2002 года. Качество, проверенное временем.</p>
+                    <h3 data-ru="АВТОДОРТРЕЙД-БТК" data-en="AVTODORTREID-BTK">АВТОДОРТРЕЙД-БТК</h3>
+                    <p data-ru="ООО «Автодортрейд-БТК» — российская компания, осуществляющая операционную деятельность в сфере нефтегазовых месторождений с 2002 года." data-en="LLC «Avtodortreid-BTK» is a Russian company operating in the oil and gas field sector since 2002.">ООО «Автодортрейд-БТК» — российская компания, осуществляющая операционную деятельность в сфере нефтегазовых месторождений с 2002 года.</p>
+                    <div class="social-links">
+                        <a href="#">in</a>
+                        <a href="#">f</a>
+                        <a href="#">@</a>
+                    </div>
                 </div>
-                <div class="footer-column">
+                <div class="footer-section">
                     <h4 data-ru="Компания" data-en="Company">Компания</h4>
                     <ul>
-                        <li><a href="about.html" data-ru="О компании" data-en="About Us">О компании</a></li>
+                        <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
                         <li><a href="history.html" data-ru="История" data-en="History">История</a></li>
                         <li><a href="careers.html" data-ru="Карьера" data-en="Careers">Карьера</a></li>
-                        <li><a href="press.html" data-ru="Пресс-центр" data-en="Press Center">Пресс-центр</a></li>
+                        <li><a href="index.html#about" data-ru="Контакты" data-en="Contact">Контакты</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
+                <div class="footer-section">
                     <h4 data-ru="Информация" data-en="Information">Информация</h4>
                     <ul>
+                        <li><a href="press.html" data-ru="Пресс-центр" data-en="Press Center">Пресс-центр</a></li>
                         <li><a href="documents.html" data-ru="Документы" data-en="Documents">Документы</a></li>
-                        <li><a href="requisites.html" data-ru="Реквизиты" data-en="Requisites">Реквизиты</a></li>
-                        <li><a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a></li>
-                        <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+                        <li><a href="sitemap.html" data-ru="Карта сайта" data-en="Sitemap">Карта сайта</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4 data-ru="Контакты" data-en="Contact">Контакты</h4>
+                <div class="footer-section">
+                    <h4 data-ru="Деятельность" data-en="Operations">Деятельность</h4>
                     <ul>
-                        <li><span data-ru="Тел: +7 (495) 411-77-77" data-en="Tel: +7 (495) 411-77-77">Тел: +7 (495) 411-77-77</span></li>
-                        <li><span data-ru="Email: info@avtodortreid.ru" data-en="Email: info@avtodortreid.ru">Email: info@avtodortreid.ru</span></li>
-                        <li><span data-ru="Москва, 5-я Ямского Поля, 23/25" data-en="Moscow, 5-Ya Yamskogo Polya, 23/25">Москва, 5-я Ямского Поля, 23/25</span></li>
+                        <li><a href="refinery.html" data-ru="Нефтепереработка" data-en="Oil Refining">Нефтепереработка</a></li>
+                        <li><a href="storage.html" data-ru="Хранение" data-en="Storage">Хранение</a></li>
+                        <li><a href="tanker.html" data-ru="Транспортировка" data-en="Transportation">Транспортировка</a></li>
+                        <li><a href="offshore.html" data-ru="Шельф" data-en="Offshore">Шельф</a></li>
                     </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p data-ru="© 2024 ООО «Автодортрейд-БТК». Все права защищены." data-en="© 2024 LLC «Avtodortreid-BTK». All rights reserved.">© 2024 ООО «Автодортрейд-БТК». Все права защищены.</p>
-                <p data-ru="ИНН: 7703324065 | ОГРН: 1027739129186" data-en="INN: 7703324065 | OGRN: 1027739129186">ИНН: 7703324065 | ОГРН: 1027739129186</p>
+                <p>&copy; 2002-2026 <span data-ru="ООО «Автодортрейд-БТК». Все права защищены." data-en="LLC «Avtodortreid-BTK». All rights reserved.">ООО «Автодортрейд-БТК». Все права защищены.</span></p>
+                <p data-ru="Оператор нефтегазовых активов" data-en="Oil & Gas Asset Operator">Оператор нефтегазовых активов</p>
             </div>
         </div>
     </footer>
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <span class="toast-icon">✓</span>
-        <span id="toastMessage">Copied!</span>
-    </div>
-
     <script>
-        // Language Switcher
-        function setLanguage(lang) {
-            document.documentElement.lang = lang;
-            
-            document.querySelectorAll('[data-ru][data-en]').forEach(el => {
-                el.textContent = el.getAttribute('data-' + lang);
-            });
-            
-            document.querySelectorAll('.lang-switch a').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            localStorage.setItem('language', lang);
-        }
-
-        // Mobile Menu Toggle
+        // Mobile menu toggle
         function toggleMenu() {
-            document.getElementById('mainNav').classList.toggle('active');
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
         }
 
-        // Toast Notification
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toastMessage');
-            toastMessage.textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
+        function closeMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.remove('active');
         }
 
-        // Load saved language preference
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const nav = document.getElementById('nav');
+            const toggle = document.querySelector('.menu-toggle');
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Language switching functionality
+        function switchLang(lang) {
+            document.getElementById('btn-ru').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            const elements = document.querySelectorAll('[data-ru][data-en]');
+            elements.forEach(el => {
+                if (lang === 'en') {
+                    el.innerHTML = el.getAttribute('data-en');
+                } else {
+                    el.innerHTML = el.getAttribute('data-ru');
+                }
+            });
+
+            document.documentElement.lang = lang;
+
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (lang === 'en') {
+                metaDesc.content = "Sitemap of LLC Avtodortreid-BTK - Oil & Gas Asset Operator since 2002. Full website structure.";
+            } else {
+                metaDesc.content = "Карта сайта ООО «Автодортрейд-БТК». Полная структура сайта. Оператор нефтегазовых активов с 2002 года.";
+            }
+
+            localStorage.setItem('preferredLang', lang);
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('language') || 'ru';
-            if (savedLang !== 'ru') {
-                document.querySelectorAll('[data-ru][data-en]').forEach(el => {
-                    el.textContent = el.getAttribute('data-' + savedLang);
-                });
-                document.querySelectorAll('.lang-switch a').forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.textContent.toLowerCase() === savedLang) {
-                        btn.classList.add('active');
-                    }
-                });
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && savedLang !== 'ru') {
+                switchLang(savedLang);
+            }
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
+            } else {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
             }
         });
     </script>
+
 </body>
 </html>

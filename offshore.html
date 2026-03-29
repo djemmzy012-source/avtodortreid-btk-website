@@ -133,35 +133,11 @@
             gap: 12px;
         }
 
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.3rem;
-            color: var(--primary);
-            box-shadow: 0 4px 12px rgba(201,162,39,0.3);
-            flex-shrink: 0;
-        }
-
-        .logo-text h1 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            margin-bottom: 2px;
-            line-height: 1.2;
-        }
-
-        .logo-text p {
-            font-size: 0.7rem;
-            opacity: 0.85;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 500;
+        .logo img {
+            height: 50px;
+            width: auto;
+            max-width: 340px;
+            object-fit: contain;
         }
 
         .menu-toggle {
@@ -698,9 +674,23 @@
             .stats-grid-4 {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .logo img {
+                height: 42px;
+                max-width: 280px;
+            }
         }
 
         @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+
+            .logo img {
+                height: 36px;
+                max-width: 240px;
+            }
+
             .menu-toggle {
                 display: block;
                 position: absolute;
@@ -747,6 +737,21 @@
                 gap: 15px;
             }
         }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .logo img {
+                height: 32px;
+                max-width: 210px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -772,11 +777,7 @@
         <div class="container">
             <div class="header-main" style="position: relative;">
                 <div class="logo">
-                    <div class="logo-icon">АД</div>
-                    <div class="logo-text">
-                        <h1 data-ru="АВТОДОРТРЕЙД-БТК" data-en="AVTODORTREID-BTK">АВТОДОРТРЕЙД-БТК</h1>
-                        <p data-ru="Оператор нефтегазовых активов" data-en="Oil & Gas Asset Operator">Оператор нефтегазовых активов</p>
-                    </div>
+                    <img src="https://z-cdn-media.chatglm.cn/files/1a13b0e8-2fb8-4cb9-8b24-3e6034d06e95.png?auth_key=1874754015-263e208c6bbd4ca0b61609edd4f1f64f-0-e3d9e78fb633958e7593249ffef8a330" alt="AVTODORTREID-BTK">
                 </div>
                 <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
             </div>

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="Хранение нефти - нефтехранилища, резервуарные парки, терминалы. Системы безопасности и контроля уровня. Oil Storage Tank Farms.">
     <meta name="theme-color" content="#002147">
-    <title data-ru="Хранение нефти — ООО «Автодортрейд-БТК»" data-en="Oil Storage — LLC «Avtodortreid-BTK»">Хранение нефти — ООО «Автодортрейд-БТК»</title>
+    <title>Хранение нефти — ООО «Автодортрейд-БТК»</title>
     <style>
+        /* ================= GLOBAL STYLES (FROM INDEX) ================= */
         * {
             margin: 0;
             padding: 0;
@@ -42,10 +43,9 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Header */
         .header {
             background: var(--primary);
-            color: white;
+            color: var(--white);
             position: fixed;
             width: 100%;
             top: 0;
@@ -55,7 +55,7 @@
 
         .header-top {
             background: var(--dark);
-            padding: 8px 0;
+            padding: 6px 0;
             font-size: 0.85rem;
             border-bottom: 1px solid rgba(201,162,39,0.3);
         }
@@ -86,6 +86,7 @@
             gap: 8px;
             opacity: 0.9;
             font-size: 0.85rem;
+            color: white;
         }
 
         .lang-switch {
@@ -121,7 +122,8 @@
         }
 
         .header-main {
-            padding: 12px 0;
+            background: var(--primary);
+            padding: 6px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -133,42 +135,18 @@
             gap: 12px;
         }
 
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.3rem;
-            color: var(--primary);
-            box-shadow: 0 4px 12px rgba(201,162,39,0.3);
-            flex-shrink: 0;
-        }
-
-        .logo-text h1 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            margin-bottom: 2px;
-            line-height: 1.2;
-        }
-
-        .logo-text p {
-            font-size: 0.7rem;
-            opacity: 0.85;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 500;
+        .logo img {
+            height: 50px;
+            width: auto;
+            max-width: 340px;
+            object-fit: contain;
         }
 
         .menu-toggle {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--accent);
             font-size: 1.5rem;
             cursor: pointer;
             padding: 8px;
@@ -176,9 +154,13 @@
             transition: background 0.3s;
         }
 
+        .menu-toggle:hover {
+            background: rgba(201,162,39,0.15);
+        }
+
         .nav {
             background: var(--secondary);
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(201,162,39,0.3);
         }
 
         .nav ul {
@@ -192,7 +174,7 @@
         .nav a {
             color: white;
             text-decoration: none;
-            padding: 16px 24px;
+            padding: 14px 22px;
             display: block;
             transition: all 0.3s ease;
             font-size: 0.85rem;
@@ -215,18 +197,59 @@
             transition: width 0.3s ease;
         }
 
-        .nav a:hover, .nav a.active {
+        .nav a:hover {
             background: rgba(255,255,255,0.08);
             color: var(--accent-hover);
         }
 
-        .nav a:hover::after, .nav a.active::after {
+        .nav a:hover::after {
             width: 70%;
         }
 
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 0 20px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            max-width: 700px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+
+        /* ================= PAGE SPECIFIC STYLES ================= */
+
         /* Page Header */
         .page-header {
-            margin-top: 120px;
+            margin-top: 115px;
             background: linear-gradient(135deg, rgba(0,33,71,0.9) 0%, rgba(0,51,102,0.92) 50%, rgba(0,21,41,0.95) 100%),
                         url('https://kimi-web-img.moonshot.cn/img/www.palagroup.com/330529017a10ec096bd1a9ad3d5ef46da7ecae16.jpg');
             background-size: cover;
@@ -269,6 +292,7 @@
             margin: 0 auto;
         }
 
+        /* Breadcrumbs */
         .breadcrumbs {
             background: var(--light);
             padding: 20px 0;
@@ -294,44 +318,6 @@
             color: var(--accent);
         }
 
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: clamp(1.6rem, 4vw, 2.4rem);
-            color: var(--primary);
-            margin-bottom: 16px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-hover));
-            margin: 16px auto 0;
-            border-radius: 2px;
-        }
-
-        .section-title p {
-            color: var(--text-light);
-            font-size: clamp(1rem, 2vw, 1.15rem);
-            max-width: 700px;
-            margin: 20px auto 0;
-            line-height: 1.6;
-        }
-
         /* Tank Types */
         .tanks-section {
             background: var(--light);
@@ -349,11 +335,13 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: all 0.4s ease;
+            border: 1px solid transparent;
         }
 
         .tank-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
         }
 
         .tank-image {
@@ -373,8 +361,9 @@
         .tank-content h3 {
             color: var(--primary);
             margin-bottom: 15px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
+            line-height: 1.3;
         }
 
         .tank-content p {
@@ -463,11 +452,14 @@
             border-radius: 12px;
             padding: 35px;
             transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
 
         .safety-card:hover {
             background: rgba(255,255,255,0.1);
             border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .safety-card h3 {
@@ -536,7 +528,7 @@
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 800;
             color: var(--accent);
             margin-bottom: 10px;
@@ -549,112 +541,54 @@
             letter-spacing: 1px;
         }
 
-        /* Footer */
-        .footer {
-            background: var(--dark);
-            color: white;
-            padding: 70px 0 30px;
-            border-top: 4px solid var(--accent);
-        }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-brand h3 {
-            color: var(--accent);
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .footer-brand p {
-            opacity: 0.85;
-            line-height: 1.9;
-            margin-bottom: 25px;
-            font-size: 0.95rem;
-        }
-
-        .footer-section h4 {
-            color: var(--accent);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(201,162,39,0.3);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
-            color: rgba(255,255,255,0.75);
-            text-decoration: none;
-            display: block;
-            padding: 10px 0;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent);
-            padding-left: 8px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(201,162,39,0.2);
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 12px;
-        }
-
-        .social-links a {
-            width: 42px;
-            height: 42px;
-            border: 2px solid rgba(201,162,39,0.4);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: var(--primary);
-        }
-
-        /* Responsive */
+        /* ================= MOBILE RESPONSIVE ================= */
+        
+        /* Tablet */
         @media (max-width: 1024px) {
             .tanks-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
             .safety-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
             .stats-grid-4 {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .logo img {
+                height: 42px;
+                max-width: 280px;
+            }
         }
 
+        /* Mobile Large */
         @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+
+            .header-top-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .header-contact {
+                gap: 15px;
+                font-size: 0.8rem;
+            }
+
+            .header-main {
+                padding: 4px 0;
+            }
+
+            .logo img {
+                height: 36px;
+                max-width: 240px;
+            }
+
             .menu-toggle {
                 display: block;
                 position: absolute;
@@ -662,6 +596,7 @@
                 top: 50%;
                 transform: translateY(-50%);
             }
+
             .nav {
                 position: fixed;
                 top: 0;
@@ -673,39 +608,186 @@
                 z-index: 1001;
                 transition: right 0.3s ease;
                 padding-top: 80px;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.3);
             }
+
             .nav.active {
                 right: 0;
             }
+
             .nav ul {
                 flex-direction: column;
                 padding: 20px;
             }
+
+            .nav a {
+                padding: 18px 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                font-size: 1rem;
+            }
+
+            .nav a::after {
+                display: none;
+            }
+
+            .nav a:hover {
+                background: rgba(201,162,39,0.1);
+                padding-left: 30px;
+            }
+
             .page-header {
-                margin-top: 110px;
+                margin-top: 105px;
                 padding: 60px 0;
             }
+
             .section {
                 padding: 60px 0;
             }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-title h2::after {
+                width: 50px;
+                height: 3px;
+            }
+
             .stats-grid-4 {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
+
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 35px;
+                text-align: center;
             }
+
+            .footer-brand h3 {
+                font-size: 1.4rem;
+            }
+
+            .footer-section h4 {
+                padding-bottom: 8px;
+            }
+
+            .footer-section a:hover {
+                padding-left: 0;
+                color: var(--accent);
+            }
+
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
                 gap: 15px;
             }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        /* Mobile Small */
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .header-contact span {
+                font-size: 0.75rem;
+            }
+
+            .lang-switch a {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
+
+            .logo img {
+                height: 32px;
+                max-width: 210px;
+            }
+
+            .section-title h2 {
+                font-size: 1.3rem;
+            }
+
+            .tank-content {
+                padding: 25px 20px;
+            }
+
+            .tank-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .footer {
+                padding: 50px 0 25px;
+            }
+
+            .social-links a {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) {
+            .tank-card:hover {
+                transform: none;
+            }
+            .safety-card:hover,
+            .stat-card:hover {
+                transform: none;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .header,
+            .footer,
+            .menu-toggle,
+            .breadcrumbs {
+                display: none;
+            }
+
+            .page-header {
+                margin-top: 0;
+                height: auto;
+                page-break-after: avoid;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
     </style>
+<base target="_blank">
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header (Exact Copy from Index) -->
     <header class="header">
         <div class="header-top">
             <div class="container">
@@ -726,11 +808,7 @@
         <div class="container">
             <div class="header-main" style="position: relative;">
                 <div class="logo">
-                    <div class="logo-icon">АД</div>
-                    <div class="logo-text">
-                        <h1 data-ru="АВТОДОРТРЕЙД-БТК" data-en="AVTODORTREID-BTK">АВТОДОРТРЕЙД-БТК</h1>
-                        <p data-ru="Оператор нефтегазовых активов" data-en="Oil & Gas Asset Operator">Оператор нефтегазовых активов</p>
-                    </div>
+                    <img src="https://z-cdn-media.chatglm.cn/files/1a13b0e8-2fb8-4cb9-8b24-3e6034d06e95.png?auth_key=1874754015-263e208c6bbd4ca0b61609edd4f1f64f-0-e3d9e78fb633958e7593249ffef8a330" alt="AVTODORTREID-BTK">
                 </div>
                 <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
             </div>
@@ -739,10 +817,12 @@
         <nav class="nav" id="nav">
             <div class="container">
                 <ul>
-                    <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
-                    <li><a href="index.html#about" data-ru="О компании" data-en="About">О компании</a></li>
-                    <li><a href="index.html#services" data-ru="Деятельность" data-en="Operations">Деятельность</a></li>
-                    <li><a href="index.html#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+                    <li><a href="index.html" onclick="closeMenu()" data-ru="Главная" data-en="Home">Главная</a></li>
+                    <li><a href="history.html" onclick="closeMenu()" data-ru="История" data-en="History">История</a></li>
+                    <li><a href="careers.html" onclick="closeMenu()" data-ru="Карьера" data-en="Careers">Карьера</a></li>
+                    <li><a href="press.html" onclick="closeMenu()" data-ru="Пресс-центр" data-en="Press Center">Пресс-центр</a></li>
+                    <li><a href="documents.html" onclick="closeMenu()" data-ru="Документы" data-en="Documents">Документы</a></li>
+                    <li><a href="index.html#about" onclick="closeMenu()" data-ru="Контакты" data-en="Contact">Контакты</a></li>
                 </ul>
             </div>
         </nav>
@@ -857,7 +937,7 @@
                 <div class="safety-card">
                     <h3><span>🧱</span> <span data-ru="Вторичное удержание" data-en="Secondary Containment">Вторичное удержание</span></h3>
                     <ul>
-                        <li data-ru="Ограждающие дамбы ёмкостью 110% от объёма largest tank" data-en="Bunding dikes with 110% capacity of largest tank">Ограждающие дамбы ёмкостью 110% от объёма largest tank</li>
+                        <li data-ru="Ограждающие дамбы ёмкостью 110% от объёма крупнейшего резервуара" data-en="Bunding dikes with 110% capacity of largest tank">Ограждающие дамбы ёмкостью 110% от объёма крупнейшего резервуара</li>
                         <li data-ru="Герметичное бетонное основание с гидроизоляцией" data-en="Sealed concrete foundation with waterproofing">Герметичное бетонное основание с гидроизоляцией</li>
                         <li data-ru="Системы сбора и отвода дождевых и пожарных вод" data-en="Rainwater and firewater collection and drainage systems">Системы сбора и отвода дождевых и пожарных вод</li>
                         <li data-ru="Мониторинг целостности поддонов (ультразвук, радиография)" data-en="Bund integrity monitoring (ultrasound, radiography)">Мониторинг целостности поддонов (ультразвук, радиография)</li>
@@ -919,7 +999,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (Exact Copy from Index) -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -935,8 +1015,18 @@
                 <div class="footer-section">
                     <h4 data-ru="Компания" data-en="Company">Компания</h4>
                     <ul>
-                        <li><a href="index.html#about" data-ru="О нас" data-en="About Us">О нас</a></li>
-                        <li><a href="index.html#info" data-ru="Реквизиты" data-en="Details">Реквизиты</a></li>
+                        <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
+                        <li><a href="history.html" data-ru="История" data-en="History">История</a></li>
+                        <li><a href="careers.html" data-ru="Карьера" data-en="Careers">Карьера</a></li>
+                        <li><a href="index.html#about" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Информация" data-en="Information">Информация</h4>
+                    <ul>
+                        <li><a href="press.html" data-ru="Пресс-центр" data-en="Press Center">Пресс-центр</a></li>
+                        <li><a href="documents.html" data-ru="Документы" data-en="Documents">Документы</a></li>
+                        <li><a href="sitemap.html" data-ru="Карта сайта" data-en="Sitemap">Карта сайта</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -948,12 +1038,6 @@
                         <li><a href="offshore.html" data-ru="Шельф" data-en="Offshore">Шельф</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4 data-ru="Информация" data-en="Information">Информация</h4>
-                    <ul>
-                        <li><a href="index.html#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
-                    </ul>
-                </div>
             </div>
             
             <div class="footer-bottom">
@@ -963,20 +1047,34 @@
         </div>
     </footer>
 
+    <!-- Scripts (Exact Copy from Index + Title Switch) -->
     <script>
         // Mobile menu toggle
         function toggleMenu() {
-            document.getElementById('nav').classList.toggle('active');
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
         }
-        
+
+        function closeMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const nav = document.getElementById('nav');
+            const toggle = document.querySelector('.menu-toggle');
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
         // Language switching functionality
         function switchLang(lang) {
-            // Update button states
             document.getElementById('btn-ru').classList.remove('active');
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
             
-            // Update all elements with data attributes
             const elements = document.querySelectorAll('[data-ru][data-en]');
             elements.forEach(el => {
                 if (lang === 'en') {
@@ -986,19 +1084,58 @@
                 }
             });
             
-            // Update page language attribute
             document.documentElement.lang = lang;
             
-            // Save preference to localStorage
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (lang === 'en') {
+                metaDesc.content = "Oil Storage - tank farms, tank terminals. Safety and level control systems. LLC Avtodortreid-BTK.";
+                document.title = "Oil Storage — LLC «Avtodortreid-BTK»";
+            } else {
+                metaDesc.content = "Хранение нефти - нефтехранилища, резервуарные парки, терминалы. Системы безопасности и контроля уровня. Oil Storage Tank Farms.";
+                document.title = "Хранение нефти — ООО «Автодортрейд-БТК»";
+            }
+            
             localStorage.setItem('preferredLang', lang);
         }
 
-        // Check for saved language preference on page load
         document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('preferredLang');
             if (savedLang && savedLang !== 'ru') {
                 switchLang(savedLang);
             }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
+            } else {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+            }
+            
+            lastScroll = currentScroll;
         });
     </script>
 
